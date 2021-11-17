@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Montserrat:wght@100;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.container-max {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-width: 320px; }
+
+.container-fluid {
+  width: 80%;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-width: 320px; }
+
+#default {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  min-width: 320px; }
+
+a {
+  text-decoration: none;
+  color: #373737; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bodoni Moda", serif;
+  font-weight: 400; }
+
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px; }
+
+.active_nav {
+  color: #99c2a5; }
+
+.mt-2 {
+  margin-top: 2rem; }
+
+.btn {
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1em 1.4em;
+  display: inline-block; }
+  .btn img {
+    margin-left: 0.5em; }
+  .btn.white {
+    background: #fff;
+    color: #05321c; }
+
+nav {
+  background-color: #fff;
+  position: fixed;
+  z-index: 1010;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 25px 5% 25px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  border-bottom: 1px solid #eaeaea; }
+  nav .drop_down .link {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-right: 1.3rem;
+    font-family: "Bodoni Moda", serif;
+    font-weight: 600; }
+    nav .drop_down .link:last-child {
+      margin-right: 0; }
+  nav .sideNav, nav .sideNav .icons, nav .sideNav .icons .nav-item, nav .sideNav .icons .nav-item .nav_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: 0.8rem; }
+    nav .sideNav .icons .nav-item, nav .sideNav .icons .nav-item .nav_img .icons .nav-item {
+      cursor: pointer;
+      margin: 0 1rem; }
+      nav .sideNav .icons .nav-item .nav_img {
+        margin-right: 0.5rem; }
+        nav .sideNav .icons .nav-item .nav_img svg {
+          height: 20px;
+          width: 20px; }
+          nav .sideNav .icons .nav-item .nav_img svg path {
+            transition: 0.2s all ease-in-out; }
+      nav .sideNav .icons .nav-item:hover .nav_img svg path {
+        transition: 0.4s all ease-in-out;
+        fill: #05321c; }
+    nav .sideNav .langs, nav .sideNav .icons .nav-item .langs {
+      margin-left: 1rem; }
+
+header {
+  margin-top: 71px;
+  height: 100vh;
+  background: url(/assets/hero_bg.png);
+  position: relative; }
+  header .logo {
+    margin-top: 2rem;
+    display: inline-block;
+    transform: translateX(-12%);
+    width: 50%;
+    min-width: 320px; }
+    header .logo svg {
+      width: 100%;
+      display: block; }
+  header .hero-text {
+    position: absolute;
+    top: 120px;
+    right: 10%;
+    width: 420px;
+    font-size: 0.84rem;
+    font-family: "Bodoni Moda", serif;
+    height: 83px;
+    overflow: visible;
+    z-index: 1010; }
+    header .hero-text .circle {
+      display: block; }
+      header .hero-text .circle img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); }
+        header .hero-text .circle img:nth-child(2) {
+          transform: translateY(-50%) translateX(-20%); }
+        header .hero-text .circle img:nth-child(3) {
+          transform: translateY(-50%) translateX(20%); }
+    header .hero-text p {
+      width: 70%;
+      margin-left: auto; }
+  header .hero-headline {
+    margin-top: 80px;
+    width: 100%;
+    position: relative; }
+    header .hero-headline .hero-hg {
+      background-color: #05321c;
+      background-image: url(/assets/hero_hgroup_bg.png);
+      color: white;
+      width: 70%;
+      padding: 3rem 25% 3rem 10%; }
+      header .hero-headline .hero-hg h1 {
+        font-size: 5rem;
+        line-height: 1;
+        display: inline-block; }
+        header .hero-headline .hero-hg h1:after {
+          content: "";
+          display: block;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+          height: 2px;
+          width: 50%;
+          background-color: #99c2a5; }
+    header .hero-headline .headline-img {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translate(0, -50%);
+      display: inline-block;
+      width: 40%;
+      min-width: 200px; }
+      header .hero-headline .headline-img img {
+        width: 100%;
+        display: block; }
+      header .hero-headline .headline-img .play-btn-big {
+        width: 110px;
+        height: 110px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20%;
+        right: 0;
+        transform: translateY(-20%);
+        transition: 0.2s all ease-in-out; }
+        header .hero-headline .headline-img .play-btn-big svg {
+          width: 100%;
+          height: 100%; }
+        header .hero-headline .headline-img .play-btn-big:hover {
+          transform: translateY(-20%) scale(1.05);
+          transition: 0.4s all ease-in-out; }
+
+/*# sourceMappingURL=style.css.map */

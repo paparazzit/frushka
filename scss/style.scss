@@ -1,0 +1,111 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Montserrat:wght@100;300;400;500;600;700&display=swap");
+@import "variables";
+@import "mixins";
+@import "general";
+@import "nav";
+
+// HEADER
+header {
+	margin-top: 71px;
+	height: 100vh;
+	background: url(/assets/hero_bg.png);
+	position: relative;
+	.logo {
+		margin-top: 2rem;
+		display: inline-block;
+		transform: translateX(-12%);
+		width: 50%;
+		min-width: 320px;
+		svg {
+			width: 100%;
+			display: block;
+		}
+	}
+
+	.hero-text {
+		position: absolute;
+		top: 120px;
+		right: 10%;
+		// border: 1px solid red;
+		width: 420px;
+		font-size: 0.84rem;
+		font-family: $hdln_font;
+		height: 83px;
+		overflow: visible;
+		z-index: 1010;
+		.circle {
+			display: block;
+			img {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				&:nth-child(2) {
+					transform: translateY(-50%) translateX(-20%);
+				}
+				&:nth-child(3) {
+					transform: translateY(-50%) translateX(20%);
+				}
+			}
+		}
+		p {
+			width: 70%;
+			margin-left: auto;
+		}
+	}
+
+	.hero-headline {
+		margin-top: 80px;
+		// border: 1px solid red;
+		width: 100%;
+		position: relative;
+		.hero-hg {
+			background-color: $accents_green_drk;
+			background-image: url(/assets/hero_hgroup_bg.png);
+			color: white;
+			width: 70%;
+			padding: 3rem 25% 3rem 10%;
+			h1 {
+				font-size: 5rem;
+				line-height: 1;
+				display: inline-block;
+				@include underline_hdl($accents_green_lgt, 50%, 1.5rem, 1.5rem);
+			}
+		}
+		.headline-img {
+			position: absolute;
+			top: 50%;
+			right: 10%;
+			transform: translate(-0, -50%);
+			// border: 1px solid blue;
+			display: inline-block;
+			width: 40%;
+			min-width: 200px;
+			img {
+				width: 100%;
+				display: block;
+			}
+			.play-btn-big {
+				// border: 1px solid red;
+				width: 110px;
+				height: 110px;
+				cursor: pointer;
+				position: absolute;
+				bottom: 20%;
+				right: 0;
+				transform: translateY(-20%);
+				transition: $transition-out;
+				// border: 1px solid red;
+				svg {
+					width: 100%;
+					height: 100%;
+				}
+
+				&:hover {
+					transform: translateY(-20%) scale(1.05);
+					transition: $transition-in;
+				}
+			}
+		}
+	}
+}

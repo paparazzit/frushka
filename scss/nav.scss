@@ -1,0 +1,61 @@
+nav {
+	background-color: $white;
+	position: fixed;
+	z-index: 1010;
+	width: 100%;
+	top: 0;
+	left: 0;
+	// border: 1px solid red;
+	padding: 25px 5% 25px 10%;
+	@include flex(center, space-between, nowrap, row);
+	border-bottom: 1px solid lighten($fnt_clr, 70%);
+	.drop_down {
+		.link {
+			font-size: 0.85rem;
+			text-transform: uppercase;
+			margin-right: 1.3rem;
+			font-family: $hdln_font;
+			font-weight: 600;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	.sideNav {
+		@include flex(center, center, nowrap, row);
+		font-size: 0.8rem;
+		.icons {
+			@extend .sideNav;
+			.nav-item {
+				cursor: pointer;
+				margin: 0 1rem;
+
+				@extend .sideNav;
+				.nav_img {
+					margin-right: 0.5rem;
+					@extend .sideNav;
+					svg {
+						height: 20px;
+						width: 20px;
+						path {
+							transition: $transition-out;
+						}
+					}
+				}
+				&:hover {
+					.nav_img {
+						svg {
+							path {
+								transition: $transition-in;
+								fill: $accents_green_drk;
+							}
+						}
+					}
+				}
+			}
+		}
+		.langs {
+			margin-left: 1rem;
+		}
+	}
+}
