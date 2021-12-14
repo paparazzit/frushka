@@ -11,9 +11,29 @@
 }
 .container-fluid {
 	width: 80%;
-	max-width: 1920px;
+	max-width: 1550px;
 	margin: 0 auto;
 	min-width: 320px;
+}
+.container {
+	border: 1px solid green;
+	width: 85%;
+	max-width: 1550px;
+	margin: 0 auto;
+	min-width: 320px;
+	@media (max-width: 1550px) {
+		width: calc(1550px * 0.85);
+		border: 1px solid red;
+	}
+	@media (max-width: 1250px) {
+		width: calc(1250px * 0.85);
+	}
+	@media (max-width: 960px) {
+		width: calc(960px * 0.85);
+	}
+	@media (max-width: 768px) {
+		width: calc(768px * 0.85);
+	}
 }
 
 #default {
@@ -56,7 +76,7 @@ body {
 .btn {
 	border-radius: 5px;
 	font-weight: 600;
-	font-size: 1rem;
+	font-size: 0.85rem;
 	padding: 1em 1.4em;
 	display: inline-block;
 
@@ -65,6 +85,55 @@ body {
 	}
 	&.white {
 		background: $white;
-		color: $accents_green_drk;
+		color: $accents_green;
+	}
+	&.green {
+		background-color: $accents_green;
+		color: $white;
+	}
+}
+
+.img_wrapper {
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+
+.card_style {
+	box-shadow: 0px 5px 10px lighten($fnt_clr, 50%);
+	padding: 30px 20px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+
+	width: 80%;
+	min-width: 320px;
+	.card_accent {
+		@include fluid-type(320px, 1920px, 20px, 55px);
+		display: inline-block;
+		&::after {
+			display: block;
+			margin-bottom: 20px;
+			content: "";
+			width: 115%;
+			height: 2px;
+			background-color: $accents_green_lgt;
+		}
+	}
+}
+
+.circle {
+	display: block;
+	// position: absolute;
+	img {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		&:nth-child(2) {
+			transform: translateY(-50%) translateX(-20%);
+		}
+		&:nth-child(3) {
+			transform: translateY(-50%) translateX(20%);
+		}
 	}
 }
