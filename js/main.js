@@ -1,26 +1,51 @@
 let window_heigh, window_width, window_scroll;
 let def = document.querySelector("#default");
+let slider1 = document.querySelector("#mySlide1");
+let slider_1;
+let slider_2;
+let slider2 = document.querySelector("#mySlide2");
+if (slider2) {
+	slider_2 = new Slider("slider2");
+}
+if (slider1) {
+	slider_1 = new Slider("slider1");
+}
 
 function start() {
 	window_width = def.offsetWidth;
 	window_heigh = def.offsetHeight;
 	// console.log(window_width, window_heigh);
 	mapResize();
-	slider_1.setSize();
-	slider_1.start();
+	if (slider1) {
+		slider_1.setSize();
+		slider_1.start();
+	}
+	if (slider2) {
+		slider_2.setSize();
+		slider_2.start();
+	}
+
+	blur_img();
+
+	// enableScroll();
+	// resizeBodyHeight();
 }
 
 function resize() {
 	start();
 	mapResize();
+	blur_img();
+	// resizeBodyHeight();
 }
 
 function mapResize() {
 	let cell = document.querySelector(".map-img");
-	let cellHeight = cell.offsetHeight;
-	let cellWidth = cell.offsetHeight;
+	if (cell) {
+		let cellHeight = cell.offsetHeight;
+		let cellWidth = cell.offsetHeight;
 
-	mapItemsDims(cellHeight, cellWidth);
+		mapItemsDims(cellHeight, cellWidth);
+	}
 }
 
 function mapItemsDims(cellHeight, cellWidth) {
@@ -36,7 +61,7 @@ function mapItemsDims(cellHeight, cellWidth) {
 	// lamelaImg.style.width = lamelaInfo.offsetHeight + "px";
 	// lamelaText.style.width =
 	// 	lamelaInfo.offsetWidth - lamelaInfo.offsetHeight + "px";
-	console.log(lamelaInfo.offsetWidth);
+	// console.log(lamelaInfo.offsetWidth);
 }
 let map_section = document.querySelector("#map-section");
 if (map_section) {
@@ -45,7 +70,7 @@ if (map_section) {
 
 function mapSectionControl(e) {
 	let currentElem = e.target;
-	console.log(e.target);
+
 	if (currentElem.classList.contains("lamela")) {
 		makeLamelaInfo(currentElem);
 	} else if (!currentElem.hasAttribute("data-show")) {
@@ -110,9 +135,89 @@ function makeLamelaInfo(lamela) {
 
 // SLIDER
 
-let slider1 = document.querySelector("#mySlide1");
+function blur_img() {
+	let blur_container = document.querySelector(".videoSection");
+	if (blur_container) {
+		let blurImg = document.querySelector(".blured");
+		let play_container = document.querySelector(".play_btn");
+		let hg = document.querySelector(".overlay_hg");
 
-let slider_1 = new Slider("slider1");
+		let b_height = blur_container.offsetHeight;
+		let b_width = blur_container.offsetWidth;
+		let b_top = blur_container.offsetTop;
+
+		blurImg.style.height = b_height + "px";
+		blurImg.style.width = b_width + "px";
+		blurImg.style.top = 0 + "px";
+	}
+
+	// console.log(blurImg.offsetTop);
+	// console.log(hg_top.top + play_cont_top.top);
+}
+
+// PARALAX
+let paralax_items = document.querySelectorAll(".paralax_itm");
+let apear_items = document.querySelectorAll(".apear_scroll");
+function paralax(items, ws) {
+	window_width = def.offsetWidth;
+	window_heigh = def.offsetHeight;
+	let el_pos_top = 0;
+
+	items.forEach((item, index) => {
+		let scroll_data = item.getAttribute("data-scroll");
+		let paralax_direction = item.getAttribute("data-direction");
+		el_pos_top = item.offsetTop;
+		let scroll_effect = Math.ceil(
+			10 + (scroll_data * (ws - el_pos_top)) / window_heigh
+		);
+
+		if (paralax_direction === "top") {
+			item.style.marginTop = -scroll_effect + "px";
+		} else if (paralax_direction === "left") {
+			item.style.transform = `translate(${scroll_effect}px , -50%)`;
+		} else if (paralax_direction === "bottom") {
+			item.style.marginBottom = -scroll_effect + "px";
+		}
+	});
+}
+
+function apear_In(items, ws) {
+	window_width = def.offsetWidth;
+	window_heigh = def.offsetHeight;
+
+	items.forEach((item, index) => {
+		let item_pos = item.offsetTop;
+
+		if (item_pos - window_heigh * 0.6 < ws) {
+			// console.log(index, "IMAMO");
+			item.classList.remove("opacity_0");
+			item.classList.add("opacity_1");
+		} else {
+			item.classList.add("opacity_0");
+			item.classList.remove("opacity_1");
+			// console.log(index, "nemamo");
+		}
+	});
+}
+
+// window.onresize = () => {
+// 	resizeBodyHeight();
+// };
+
+// window.onload = () => {
+// 	enableScroll();
+// 	resizeBodyHeight();
+// };
+
+// Functions
 
 window.addEventListener("load", start);
 window.addEventListener("resize", resize);
+window.addEventListener("scroll", () => {
+	let ws = window.scrollY;
+
+	paralax(paralax_items, ws);
+	apear_In(apear_items, ws);
+});
+
+// PROJECT

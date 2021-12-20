@@ -1,10 +1,13 @@
 // FONTS
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Montserrat:wght@100;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 @import "variables";
 @import "mixins";
 @import "general";
 @import "nav";
-
+@import "project";
+@import "investitor";
+@import "kontakt";
 // HEADER
 header {
 	margin-top: 57px;
@@ -60,6 +63,7 @@ header {
 		// border: 1px solid red;
 		width: 100%;
 		position: relative;
+
 		.hero-hg {
 			background-color: $accents_green_drk;
 			background-image: url(/assets/hero_hgroup_bg.png);
@@ -97,6 +101,7 @@ header {
 				transform: translateY(-20%);
 				transition: $transition-out;
 				// border: 1px solid red;
+				margin-top: 100px;
 				svg {
 					width: 100%;
 					height: 100%;
@@ -119,6 +124,13 @@ header {
 	background-position: center;
 	margin-bottom: 50px;
 	padding: 30px 0 30px 0;
+	transition: 0.3s all ease-in-out;
+	&.opacity_0 {
+		opacity: 0;
+	}
+	&.opacity_1 {
+		opacity: 1;
+	}
 	.container {
 		// border: 1px solid red;
 		@include flex(center, space-between, wrap, row);
@@ -268,6 +280,10 @@ header {
 			width: 70%;
 			min-width: 320px;
 			z-index: 3;
+			position: relative;
+			z-index: 2;
+			transition: 0.3s all ease-in-out;
+			overflow: hidden;
 		}
 		.card-wrapper {
 			flex: 0 0 30%;
@@ -286,7 +302,7 @@ header {
 						height: 130px;
 						top: 12%;
 						left: -15%;
-						z-index: -1;
+						z-index: 2;
 					}
 				}
 			}
@@ -298,6 +314,9 @@ header {
 	margin: 100px 0;
 	.apartmani_wrapper {
 		position: relative;
+		border: 1px solid green;
+		height: 671px;
+
 		.card-wrapper {
 			position: absolute;
 			width: 550px;
@@ -318,6 +337,14 @@ header {
 				}
 			}
 		}
+		.img-wrapper {
+			// overflow: hidden;
+			// overflow: hidden;
+			display: block;
+			border: 1px solid red;
+			height: 100%;
+			overflow: hidden;
+		}
 	}
 }
 
@@ -328,6 +355,7 @@ header {
 	position: fixed;
 	top: 57px;
 	left: 0;
+	z-index: 2020;
 	.contact-wrapper {
 		// border: 1px solid red;
 		height: 100%;
@@ -344,7 +372,8 @@ header {
 			color: $white;
 			// border: 1px solid yellow;
 			// display: block;
-			rotate: -90deg;
+			transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
 			bottom: 78px;
 			left: -55px;
 			width: 150px;
@@ -363,7 +392,7 @@ header {
 			align-items: center;
 			justify-content: space-between;
 			overflow: hidden;
-			transition: 0.3s margin ease-in-out;
+			transition: 0.6s margin ease-in-out;
 			.item {
 				flex: 0 0 33.33%;
 				width: 33.33%;
@@ -435,11 +464,12 @@ header {
 		position: absolute;
 		bottom: 135px;
 		right: -20px;
-		rotate: -90deg;
+		transform: rotate(-90deg);
+		// -o-transform: rotate(-90deg);
 		z-index: 4;
 		background-color: rgba(255, 255, 255, 0.637);
 		// background-color: rgba(255, 255, 255, 0.507);
-
+		box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.26);
 		overflow: hidden;
 
 		.txt_v {
@@ -489,25 +519,277 @@ header {
 		}
 	}
 }
-.panorama {
-	border: 1px solid red;
-	height: 100vh;
+
+.fruska_gora {
+	margin: 150px 0;
+	height: 671px;
+
+	background: url(../assets/fruskaGora/fruskaGora.jpg);
+	// background-attachment: fixed;
+	background-position: top center;
+	background-size: cover;
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-end;
+	.fruska_wrapper {
+		flex: 0 0 38%;
+		width: 38%;
+		min-width: 600px;
+		background: rgba($accents_green, 0.93);
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		z-index: 2;
+		h2,
+		h3,
+		p {
+			position: relative;
+			z-index: 3;
+			width: 80%;
+			color: white;
+			text-align: center;
+		}
+		h3 {
+			font-family: $fnt_accent;
+			font-size: 2.4rem;
+			letter-spacing: 1.5px;
+		}
+		h2 {
+			margin-bottom: 70px;
+			font-size: 3.7rem;
+			letter-spacing: 2px;
+			line-height: 1;
+			&::after {
+				content: "";
+				display: block;
+				width: 50px;
+				height: 1px;
+				background: $bg_green;
+				margin: 30px auto 0 auto;
+			}
+		}
+		p {
+			font-weight: 500;
+			letter-spacing: 1px;
+		}
+		.btn {
+			padding: 20px 30px;
+		}
+		img.fruska_logo {
+			width: 70%;
+			height: 70%;
+			// object-fit: cover;
+			// -o-object-fit: cover;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			z-index: 0;
+		}
+	}
+}
+
+.division_cards {
+	margin-bottom: 100px;
+	.promont_logo {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	.division_wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+
+		flex-wrap: wrap;
+		.card {
+			width: 341px;
+			height: 343px;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 0 50px 5px;
+			.card_img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				display: block;
+				top: 0;
+				left: 0;
+				z-index: 0;
+				overflow: hidden;
+				img {
+					display: block;
+					height: 100%;
+					width: 100%;
+					z-index: 0;
+					transition: $transition-out;
+				}
+			}
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 62%;
+				max-height: 62%;
+				min-height: 62%;
+				width: 100%;
+				background: rgba(black, 0.6);
+				mix-blend-mode: hard-light;
+				transition: $transition-out;
+				&::after {
+					display: block;
+					width: 100%;
+					height: 3px;
+					content: "";
+					background: $bg_green;
+					bottom: 0;
+					position: absolute;
+				}
+			}
+			.letter_overly {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-o-transform: translate(-50%, -50%);
+				transition: $transition-out;
+				// border: 1px solid red;
+			}
+			h2 {
+				position: relative;
+				z-index: 2;
+				color: white;
+				font-size: 2.4rem;
+				text-transform: uppercase;
+			}
+			cursor: pointer;
+			transition: $transition-out;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				.card_img {
+					img {
+						filter: blur(3px);
+						transition: $transition-in;
+					}
+				}
+				.overlay {
+					min-height: 100%;
+					transition: $transition-in;
+				}
+				.letter_overly {
+					transition: $transition-in;
+					transition-duration: 0.5s;
+					transform: translate(-50%, -50%) scale(0.9);
+					-o-transform: translate(-50%, -50%) scale(0.9);
+				}
+			}
+		}
+	}
+}
+
+// VIDEO SECTION
+
+.videoSection {
+	background: black;
 	position: relative;
-	.pano_wrapper {
-		// position: absolute;
-		border: 1px solid blue;
-		// height: 90%;
-		// width: 112%;
-		// left: 50%;
-		// transform: translateX(-50%);
+	margin-bottom: 100px;
+
+	& > img {
 		width: 100%;
-		height: 100%;
-		iframe {
-			display: block;
+		display: block;
+		opacity: 0.5;
+	}
+	.overlay_hg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		height: 80%;
+		padding: 50px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		.hg_text {
 			width: 100%;
-			border: 1px solid green;
-			height: 450px;
-			object-fit: cover;
+			text-align: center;
+			h3 {
+				color: $accents_green_lgt;
+				font-family: $text-font;
+				text-transform: uppercase;
+				position: relative;
+			}
+			h2 {
+				font-size: 4.5rem;
+				color: $white;
+				position: relative;
+
+				display: inline-block;
+				&::after {
+					content: "";
+					display: block;
+					width: 80%;
+					height: 2px;
+					background: $bg_green;
+					margin: 0 auto;
+				}
+			}
+			p {
+				color: $white;
+				margin: 30px 0;
+			}
+		}
+		.video_controls {
+			text-align: center;
+
+			.play_btn {
+				position: relative;
+				border: 2px solid $white;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				background: black;
+				cursor: pointer;
+
+				z-index: 3;
+				img {
+					width: 25px;
+					position: relative;
+					z-index: 4;
+					// width: 80%;
+				}
+				img.blured {
+					position: absolute;
+
+					// display: none;
+					border: 1px solid red;
+					z-index: 0;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					filter: blur(1px);
+					opacity: 0.5;
+				}
+			}
+
+			h3 {
+				color: $white;
+				margin-top: 10px;
+				font-size: 1rem;
+				font-weight: 200;
+				letter-spacing: 1px;
+			}
 		}
 	}
 }

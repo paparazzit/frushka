@@ -1,13 +1,17 @@
 function Slider(slider) {
-	this.slider = document.querySelector(`#${slider}`);
-	this.btn_next = this.slider.querySelector(".next");
-	this.btn_prev = this.slider.querySelector(".prev");
-	this.items = this.slider.querySelectorAll(".item");
-	this.items_container = this.slider.querySelector(".items_container");
-	this.current_item = this.slider.querySelector("#curent_itm");
-	this.total_items = this.slider.querySelector("#total_itm");
-	this.left = this.slider.querySelector(".touchLeft");
-	this.touch = this.slider.querySelector(".touchRight");
+	if (slider) {
+		this.slider = document.querySelector(`#${slider}`);
+		this.btn_next = this.slider.querySelector(".next");
+		this.btn_prev = this.slider.querySelector(".prev");
+		this.items = this.slider.querySelectorAll(".item");
+		this.items_container = this.slider.querySelector(".items_container");
+		this.current_item = this.slider.querySelector("#curent_itm");
+		this.total_items = this.slider.querySelector("#total_itm");
+		this.left = this.slider.querySelector(".touchLeft");
+		this.touch = this.slider.querySelector(".touchRight");
+	} else {
+		console.log("nema ga");
+	}
 	this.index = 0;
 	this.totla_count = 0;
 	// SIZES
