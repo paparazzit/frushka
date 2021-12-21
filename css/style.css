@@ -375,6 +375,10 @@ section.project_header {
 
 section.option_icons {
   margin: 30px 0; }
+  section.option_icons h2 {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 3rem; }
   section.option_icons .container {
     display: flex;
     align-items: center;
@@ -476,17 +480,17 @@ section.contact_header {
       align-items: stretch;
       justify-content: center; }
       section.contact_header .header_bottom .container .contact_left {
-        margin-right: 40px;
+        margin-right: 50px;
         display: flex;
         align-items: stretch;
         justify-content: space-between;
         flex-direction: column;
         flex: 0 0 30%;
-        max-width: 280px; }
+        max-width: 290px; }
         section.contact_header .header_bottom .container .contact_left .left_top {
           padding: 20px;
           background-color: white;
-          border-radius: 8px;
+          border-radius: 5px;
           box-shadow: 2px 3px 10px rgba(63, 63, 63, 0.418); }
           section.contact_header .header_bottom .container .contact_left .left_top h3 {
             font-size: 1.8rem; }
@@ -521,7 +525,8 @@ section.contact_header {
         section.contact_header .header_bottom .container .contact_right form {
           background-color: white;
           padding: 20px;
-          box-shadow: 2px 3px 10px rgba(63, 63, 63, 0.418); }
+          box-shadow: 2px 3px 10px rgba(63, 63, 63, 0.418);
+          border-radius: 5px; }
           section.contact_header .header_bottom .container .contact_right form h2 {
             font-size: 1.8rem; }
             section.contact_header .header_bottom .container .contact_right form h2::after {
@@ -545,6 +550,121 @@ section.contact_header {
               border-radius: 3px;
               border: 1px solid #b7b7b7;
               padding: 5px 5px; }
+            section.contact_header .header_bottom .container .contact_right form > div.bottom {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end; }
+              section.contact_header .header_bottom .container .contact_right form > div.bottom > * {
+                margin-left: 30px; }
+              section.contact_header .header_bottom .container .contact_right form > div.bottom .btn {
+                border: none;
+                width: 170px; }
+
+section.resort_des {
+  margin: 100px 0; }
+  section.resort_des .row {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    section.resort_des .row .resort_card {
+      flex: 0 0 31%;
+      max-width: 535px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      box-shadow: 3px 3px 8px rgba(59, 59, 59, 0.247);
+      margin: 20px 0; }
+      section.resort_des .row .resort_card .card_img img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        -o-object-fit: cover; }
+      section.resort_des .row .resort_card .card_body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column; }
+        section.resort_des .row .resort_card .card_body h2 {
+          font-size: 2.4rem;
+          text-align: center;
+          margin: 20px 0;
+          display: inline-block; }
+          section.resort_des .row .resort_card .card_body h2::after {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 1px;
+            background-color: #99c2a5;
+            margin: 0 auto; }
+        section.resort_des .row .resort_card .card_body p {
+          text-align: center;
+          margin-bottom: 20px;
+          width: 80%;
+          font-weight: 500; }
+
+section.uBlizini .hg_blizu {
+  position: relative;
+  text-align: center; }
+  section.uBlizini .hg_blizu::after, section.uBlizini .hg_blizu::before {
+    display: block;
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    background-color: #0c5c34;
+    content: "";
+    transform: translateY(-50%);
+    top: 50%; }
+  section.uBlizini .hg_blizu::after {
+    left: 0; }
+  section.uBlizini .hg_blizu::before {
+    right: 0; }
+  section.uBlizini .hg_blizu .hg_wrapper {
+    padding: 0 30px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    z-index: 1010; }
+  section.uBlizini .hg_blizu h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300; }
+  section.uBlizini .hg_blizu h2 {
+    color: #0c5c34;
+    font-size: 2rem;
+    margin-top: 15px; }
+section.uBlizini .container .row {
+  margin: 80px 0;
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly; }
+  section.uBlizini .container .row .blizu_card {
+    position: relative;
+    flex: 0 0 31%; }
+    section.uBlizini .container .row .blizu_card .card_img img {
+      display: block;
+      width: 100%;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+    section.uBlizini .container .row .blizu_card .card_body {
+      position: absolute;
+      bottom: 0;
+      background-color: #f9fcfd;
+      width: 100%;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      section.uBlizini .container .row .blizu_card .card_body img {
+        display: block;
+        margin: 0 auto;
+        height: 80px; }
+    section.uBlizini .container .row .blizu_card:nth-child(2) .card_body {
+      background-color: #ecf4f6; }
+    section.uBlizini .container .row .blizu_card:last-child .card_body {
+      background-color: #e8e5e1; }
+
+section.resort_icons {
+  margin-bottom: 200px; }
 
 header {
   margin-top: 57px;

@@ -1,0 +1,146 @@
+section.resort_des {
+	margin: 100px 0;
+	.row {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+
+		.resort_card {
+			flex: 0 0 31%;
+			max-width: 535px;
+			// height: 855px;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+
+			box-shadow: 3px 3px 8px rgba(59, 59, 59, 0.247);
+			margin: 20px 0;
+			.card_img {
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					object-fit: cover;
+					-o-object-fit: cover;
+				}
+			}
+			.card_body {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-direction: column;
+
+				h2 {
+					font-size: 2.4rem;
+					text-align: center;
+					margin: 20px 0;
+					display: inline-block;
+
+					&::after {
+						content: "";
+						display: block;
+						width: 50%;
+						height: 1px;
+						background-color: $accents_green_lgt;
+						margin: 0 auto;
+					}
+				}
+				p {
+					text-align: center;
+					margin-bottom: 20px;
+					width: 80%;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
+
+section.uBlizini {
+	.hg_blizu {
+		position: relative;
+		text-align: center;
+		&::after,
+		&::before {
+			display: block;
+			position: absolute;
+			width: 30%;
+			height: 1px;
+			background-color: $accents_green;
+			content: "";
+			transform: translateY(-50%);
+			top: 50%;
+		}
+		&::after {
+			left: 0;
+		}
+		&::before {
+			right: 0;
+		}
+		.hg_wrapper {
+			padding: 0 30px;
+			background-color: white;
+			display: inline-block;
+			position: relative;
+			z-index: 1010;
+		}
+		h3 {
+			font-family: $text-font;
+			font-weight: 300;
+		}
+		h2 {
+			color: $accents_green;
+			font-size: 2rem;
+			margin-top: 15px;
+		}
+	}
+	.container {
+		.row {
+			margin: 80px 0;
+			display: flex;
+			align-self: center;
+			justify-content: space-evenly;
+			.blizu_card {
+				position: relative;
+				flex: 0 0 31%;
+				.card_img {
+					img {
+						display: block;
+						width: 100%;
+						border-top-left-radius: 3px;
+						border-top-right-radius: 3px;
+					}
+				}
+				.card_body {
+					position: absolute;
+					bottom: 0;
+					background-color: #f9fcfd;
+					width: 100%;
+					height: 110px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					img {
+						display: block;
+						margin: 0 auto;
+						height: 80px;
+					}
+				}
+				&:nth-child(2) {
+					.card_body {
+						background-color: #ecf4f6;
+					}
+				}
+				&:last-child {
+					.card_body {
+						background-color: #e8e5e1;
+					}
+				}
+			}
+		}
+	}
+}
+
+section.resort_icons {
+	margin-bottom: 200px;
+}

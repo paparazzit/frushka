@@ -102,6 +102,11 @@ section.project_header {
 
 section.option_icons {
 	margin: 30px 0;
+	h2 {
+		text-align: center;
+		margin: 50px 0;
+		font-size: 3rem;
+	}
 	.container {
 		display: flex;
 		align-items: center;
