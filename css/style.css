@@ -17,22 +17,21 @@
   min-width: 320px; }
 
 .container {
-  width: 80%;
   max-width: 1550px;
   margin: 0 auto;
   min-width: 320px; }
   @media (max-width: 1550px) {
     .container {
       width: calc(1550px * 0.85); } }
-  @media (max-width: 1250px) {
+  @media (max-width: 1318px) {
     .container {
-      width: calc(1250px * 0.85); } }
-  @media (max-width: 960px) {
+      width: calc(1318px * 0.85); } }
+  @media (max-width: 1120px) {
     .container {
-      width: calc(960px * 0.85); } }
-  @media (max-width: 768px) {
+      width: calc(1120px * 0.85); } }
+  @media (max-width: 952px) {
     .container {
-      width: calc(768px * 0.85); } }
+      width: calc(952px * 0.85); } }
 
 #default {
   position: absolute;
@@ -126,6 +125,29 @@ ul {
       transform: translateY(-50%) translateX(-20%); }
     .circle img:nth-child(3) {
       transform: translateY(-50%) translateX(20%); }
+
+.fullScreen {
+  display: bl;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 32px;
+  width: 32px;
+  background-color: rgba(0, 0, 0, 0.562); }
+  .fullScreen > * {
+    width: 12px;
+    height: 12px;
+    position: absolute; }
+    .fullScreen > *.top {
+      border-top: 3px solid white;
+      border-right: 3px solid white;
+      top: 4px;
+      right: 4px; }
+    .fullScreen > *.bottom {
+      border-bottom: 3px solid white;
+      border-left: 3px solid white;
+      bottom: 4px;
+      left: 4px; }
 
 footer {
   position: relative; }
@@ -813,6 +835,374 @@ section.vrdnik {
         section.vrdnik .vrdnik_wrapper article.act_article:last-child .img_wrapper {
           height: 791px; }
 
+section.loc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 0; }
+  section.loc .right {
+    flex: 0 0 70%;
+    width: 70%; }
+  section.loc .left {
+    flex: 0 0 30%;
+    width: 30%;
+    align-self: stretch;
+    position: relative; }
+    section.loc .left .left_card {
+      border-radius: 5px;
+      padding: 30px;
+      text-align: center;
+      position: absolute;
+      width: 110%;
+      top: 50%;
+      right: 10%;
+      background: rgba(255, 255, 255, 0.96);
+      transform: translate(50%, -50%);
+      box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.24); }
+      section.loc .left .left_card h2 {
+        font-size: 3.2rem; }
+      section.loc .left .left_card h3 {
+        font-family: "Parisienne", cursive;
+        font-size: 1.9rem;
+        color: #99c2a5; }
+        section.loc .left .left_card h3::after {
+          width: 60px;
+          height: 1px;
+          background: #99c2a5;
+          content: "";
+          display: block;
+          margin: 30px auto 25px auto; }
+      section.loc .left .left_card p {
+        line-height: 1.6;
+        margin-bottom: 20px; }
+
+section.pano_loc {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin: 150px 0; }
+  section.pano_loc .left {
+    flex: 0 0 75%;
+    width: 75%;
+    position: relative; }
+    section.pano_loc .left iframe {
+      width: 100%;
+      height: 720px;
+      display: block; }
+  section.pano_loc .right {
+    flex: 0 0 25%;
+    width: 25%;
+    position: relative; }
+    section.pano_loc .right .card_right {
+      position: absolute;
+      width: 115%;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      height: 40%;
+      padding: 1rem 2rem;
+      background: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.24); }
+      section.pano_loc .right .card_right p {
+        line-height: 1.5; }
+        section.pano_loc .right .card_right p::before {
+          content: "";
+          display: block;
+          width: 80px;
+          margin: 30px auto;
+          height: 1px;
+          background: #99c2a5; }
+
+section.apartmani_hero {
+  margin: 150px 0;
+  position: relative; }
+  section.apartmani_hero .img_wrapper {
+    position: relative;
+    width: 100%; }
+    section.apartmani_hero .img_wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      -o-object-fit: cover;
+      object-position: center;
+      -o-object-position: center;
+      display: block; }
+    section.apartmani_hero .img_wrapper .card_pointer {
+      position: absolute;
+      width: 20px;
+      height: 20px; }
+      section.apartmani_hero .img_wrapper .card_pointer .bubble_line {
+        position: absolute;
+        height: 0px;
+        width: 1px;
+        background: black;
+        bottom: 50%;
+        left: 50%;
+        transform: rotate(-15deg);
+        -o-transform: rotate(-15deg);
+        transform-origin: bottom; }
+      section.apartmani_hero .img_wrapper .card_pointer.lml_1 {
+        top: 46%;
+        left: 54%; }
+        section.apartmani_hero .img_wrapper .card_pointer.lml_1.point_active .pointer_bubble {
+          animation: pointer_bubble 0.5s forwards;
+          animation-delay: 0.7s; }
+        section.apartmani_hero .img_wrapper .card_pointer.lml_1.point_active .bubble_line {
+          animation: bubble_line 0.5s forwards;
+          animation-delay: 0.5s; }
+      section.apartmani_hero .img_wrapper .card_pointer.lml_2 {
+        top: 55%;
+        left: 78%; }
+        section.apartmani_hero .img_wrapper .card_pointer.lml_2.point_active .bubble_line {
+          animation: bubble_line 0.5s forwards;
+          animation-delay: 0.3s; }
+        section.apartmani_hero .img_wrapper .card_pointer.lml_2.point_active .pointer_bubble {
+          animation: pointer_bubble 0.5s forwards;
+          animation-delay: 0.9s; }
+      section.apartmani_hero .img_wrapper .card_pointer .pointer_bubble {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.521);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 50%;
+        bottom: calc(100% + 50px);
+        left: -60px;
+        transform: scale(0); }
+        section.apartmani_hero .img_wrapper .card_pointer .pointer_bubble h2 {
+          line-height: 1; }
+        section.apartmani_hero .img_wrapper .card_pointer .pointer_bubble p {
+          font-size: 0.7rem; }
+  section.apartmani_hero .apartmani_card {
+    position: absolute;
+    background: white;
+    padding: 40px 0;
+    top: -10%;
+    left: 5%;
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px rgba(59, 59, 59, 0.247);
+    width: 30%;
+    min-width: 520px;
+    text-align: center; }
+    section.apartmani_hero .apartmani_card h2 {
+      font-size: 3rem; }
+    section.apartmani_hero .apartmani_card h3 {
+      font-family: "Parisienne", cursive;
+      font-size: 2rem;
+      color: #99c2a5; }
+      section.apartmani_hero .apartmani_card h3::after {
+        content: "";
+        display: block;
+        width: 70px;
+        background: #99c2a5;
+        height: 1px;
+        margin: 25px auto 25px auto; }
+    section.apartmani_hero .apartmani_card p {
+      width: 80%;
+      margin: 0 auto 20px auto; }
+
+section.details {
+  margin-bottom: 150px; }
+  section.details .container .row {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 30px 0;
+    padding: 20px; }
+    section.details .container .row#drop_row {
+      margin-top: -340px;
+      transition: 0.5s all ease-in-out; }
+      section.details .container .row#drop_row.show_more {
+        margin-top: 30px; }
+    section.details .container .row th {
+      font-weight: 400; }
+    section.details .container .row table {
+      text-align: center; }
+    section.details .container .row table {
+      width: 100%;
+      border-collapse: collapse; }
+      section.details .container .row table th,
+      section.details .container .row table td {
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #c4c4c4;
+        border-right: 1px solid #c4c4c4; }
+        section.details .container .row table th:last-child,
+        section.details .container .row table td:last-child {
+          border-right: none; }
+        section.details .container .row table th.m2,
+        section.details .container .row table td.m2 {
+          background: #99c2a5;
+          color: white; }
+        section.details .container .row table th.invisible,
+        section.details .container .row table td.invisible {
+          border-right: none; }
+    section.details .container .row .tlc_wrapper {
+      flex: 0 0 43%;
+      width: 43%; }
+      section.details .container .row .tlc_wrapper img {
+        width: 80%;
+        display: block; }
+    section.details .container .row .apart_desc {
+      flex: 0 0 54%;
+      width: 54%; }
+      section.details .container .row .apart_desc > h2 {
+        font-size: 2.8rem; }
+      section.details .container .row .apart_desc .tip_lg {
+        border-top: 2px solid #0c5c34;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between; }
+        section.details .container .row .apart_desc .tip_lg .dostupnost {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          section.details .container .row .apart_desc .tip_lg .dostupnost p {
+            margin-left: 20px; }
+            section.details .container .row .apart_desc .tip_lg .dostupnost p.dost {
+              color: #99c2a5;
+              align-self: flex-end; }
+      section.details .container .row .apart_desc .apartman_text p {
+        margin-bottom: 20px; }
+    section.details .container .row .apartman_table {
+      flex: 0 0 43%;
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s all ease-in-out;
+      transform: scaleY(0.5);
+      transform-origin: top center;
+      opacity: 0;
+      padding: 10px; }
+      section.details .container .row .apartman_table.show_more {
+        opacity: 1;
+        transform: scaleY(1); }
+      section.details .container .row .apartman_table h2 {
+        margin-left: 20px;
+        margin-bottom: 20px; }
+      section.details .container .row .apartman_table .napomena {
+        margin-top: 20px;
+        padding: 0 20px 20px 20px; }
+        section.details .container .row .apartman_table .napomena h3 {
+          font-size: 1.1rem; }
+        section.details .container .row .apartman_table .napomena p {
+          font-size: 0.8rem;
+          line-height: 1.5; }
+    section.details .container .row .tbl_shadow {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.295);
+      border-radius: 5px; }
+    section.details .container .row .right_cell {
+      flex: 0 0 54%;
+      width: 54%; }
+      section.details .container .row .right_cell h2 {
+        margin-left: 20px;
+        margin-bottom: 20px; }
+      section.details .container .row .right_cell .lamela_table {
+        transition: 0.5s all ease-in-out;
+        padding: 10px;
+        opacity: 0;
+        transform: scaleY(0.5);
+        transform-origin: top center; }
+        section.details .container .row .right_cell .lamela_table.show_more {
+          opacity: 1;
+          transform: scaleY(1); }
+      section.details .container .row .right_cell .contact_form {
+        padding: 8px;
+        transition: 0.3s all ease-in-out;
+        margin-top: 30px; }
+        section.details .container .row .right_cell .contact_form .contact_desc {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #c4c4c4;
+          padding-bottom: 20px;
+          padding-top: 10px; }
+          section.details .container .row .right_cell .contact_form .contact_desc h2 {
+            margin: 0 0 0 20px; }
+          section.details .container .row .right_cell .contact_form .contact_desc p {
+            font-size: 0.85rem; }
+        section.details .container .row .right_cell .contact_form form {
+          margin-top: 35px; }
+          section.details .container .row .right_cell .contact_form form > * {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px; }
+            section.details .container .row .right_cell .contact_form form > * label {
+              width: 30%;
+              margin-left: 20px;
+              font-family: "Bodoni Moda", serif;
+              color: #3d3d3d;
+              font-size: 1rem; }
+            section.details .container .row .right_cell .contact_form form > * input,
+            section.details .container .row .right_cell .contact_form form > * textarea {
+              width: 70%;
+              border: 1px solid #c4c4c4;
+              padding: 8px;
+              border-radius: 3px;
+              font-family: "Montserrat", sans-serif;
+              font-size: 0.95rem; }
+            section.details .container .row .right_cell .contact_form form > * textarea {
+              resize: none;
+              height: 150px; }
+            section.details .container .row .right_cell .contact_form form > *.buttons {
+              justify-content: flex-end; }
+              section.details .container .row .right_cell .contact_form form > *.buttons .btn {
+                border: none;
+                width: 200px; }
+  section.details .container .toggle_btn {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #c4c4c4; }
+    section.details .container .toggle_btn h3 {
+      font-size: 1rem;
+      color: #3d3d3d;
+      cursor: pointer; }
+
+section.render_apart .pano_wrapper {
+  width: 100%;
+  position: relative; }
+  section.render_apart .pano_wrapper img {
+    width: 100%;
+    display: block;
+    z-index: 1; }
+  section.render_apart .pano_wrapper .fullScreen::before {
+    content: "Proverite dosupnost na 3D modelu";
+    position: absolute;
+    right: 120%;
+    color: white;
+    width: 290px;
+    top: 50%;
+    transform: translateY(-50%); }
+
+section.apart_slider {
+  margin-bottom: 150px; }
+
+@keyframes bubble_line {
+  0% {
+    height: 0; }
+  100% {
+    height: 66px; } }
+@keyframes pointer_bubble {
+  0% {
+    transform: scale(0);
+    transform-origin: bottom; }
+  100% {
+    transform: scale(1);
+    transform-origin: bottom; } }
+@keyframes table_drop {
+  0% {
+    min-height: 0;
+    max-height: 0; }
+  100% {
+    min-height: 600px;
+    max-height: 600px; } }
 header {
   margin-top: 57px;
   min-height: 100vh;
@@ -898,12 +1288,12 @@ header {
           transition: 0.4s all ease-in-out; }
 
 .map-section {
-  margin-top: 100px;
+  margin-top: 150px;
   background-color: #cadeb2;
   background-image: url(/assets/map/map-bg.png);
   background-size: cover;
   background-position: center;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   padding: 30px 0 30px 0;
   transition: 0.3s all ease-in-out; }
   .map-section.opacity_0 {
@@ -941,8 +1331,9 @@ header {
           background-color: #99c2a5; }
       .map-section .container .map-legend p {
         display: block;
-        width: 70%;
-        font-size: 0.85rem; }
+        width: 90%;
+        font-size: 0.85rem;
+        font-weight: 500; }
         .map-section .container .map-legend p:after {
           content: "";
           display: block;
@@ -952,12 +1343,20 @@ header {
           width: 50%;
           background-color: #99c2a5; }
       .map-section .container .map-legend ol {
-        list-style-position: inside; }
+        list-style-position: inside;
+        list-style: none; }
         .map-section .container .map-legend ol li {
           font-size: 0.9rem;
           margin-bottom: 0.7em;
           cursor: pointer; }
+          .map-section .container .map-legend ol li span {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #0c5c34; }
           .map-section .container .map-legend ol li:hover {
+            font-weight: 600;
+            color: #0c5c34; }
+          .map-section .container .map-legend ol li.active {
             font-weight: 600;
             color: #0c5c34; }
     .map-section .container .map-img {
@@ -968,24 +1367,49 @@ header {
       background-position: center;
       background-repeat: no-repeat;
       position: relative; }
-      .map-section .container .map-img img {
+      .map-section .container .map-img > img {
         width: 100%;
         display: block; }
-      .map-section .container .map-img .lamela {
+      .map-section .container .map-img .point_wrapper {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer; }
+        .map-section .container .map-img .point_wrapper.hovering img {
+          transform: scale(1.15);
+          transition: 0.2s all ease; }
+        .map-section .container .map-img .point_wrapper.hovering h3 {
+          transform: scale(1.14);
+          transition: 0.2s all ease; }
+        .map-section .container .map-img .point_wrapper img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          z-index: 0;
+          object-fit: cover;
+          -o-object-fit: cover; }
+        .map-section .container .map-img .point_wrapper h3 {
+          position: relative;
+          z-index: 1010;
+          color: #0c5c34;
+          margin-top: -3px; }
+      .map-section .container .map-img .lamele {
         display: block;
         position: absolute;
         transform: translate(-50%, -50%);
-        cursor: pointer;
-        border: 1px solid red; }
-        .map-section .container .map-img .lamela.lamela-1 {
+        cursor: pointer; }
+        .map-section .container .map-img .lamele.lamela_1 {
           top: 48.5%;
-          right: 27.5%; }
-          .map-section .container .map-img .lamela.lamela-1:hover {
+          right: 27%; }
+          .map-section .container .map-img .lamele.lamela_1:hover {
             background: rgba(255, 0, 0, 0.178); }
-        .map-section .container .map-img .lamela.lamela-2 {
+        .map-section .container .map-img .lamele.lamela_2 {
           top: 53%;
-          right: 37%; }
-          .map-section .container .map-img .lamela.lamela-2:hover {
+          right: 36.5%; }
+          .map-section .container .map-img .lamele.lamela_2:hover {
             background: rgba(0, 128, 0, 0.301); }
       .map-section .container .map-img .card-lamela {
         position: absolute;
@@ -1002,6 +1426,24 @@ header {
         justify-content: space-between;
         flex-wrap: nowrap;
         flex-direction: row; }
+        .map-section .container .map-img .card-lamela .close_lml {
+          width: 1.3rem;
+          height: 1.3rem;
+          cursor: pointer;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          box-sizing: border-box; }
+          .map-section .container .map-img .card-lamela .close_lml span {
+            box-sizing: border-box;
+            position: absolute;
+            height: 1.3rem;
+            border-left: 2px solid #373737;
+            transform: rotate(45deg);
+            left: 11px;
+            top: 0; }
+            .map-section .container .map-img .card-lamela .close_lml span:last-child {
+              transform: rotate(-45deg); }
         .map-section .container .map-img .card-lamela article {
           padding: 20px;
           flex: 0 0 70%;
@@ -1020,8 +1462,10 @@ header {
             color: #99c2a5;
             margin-bottom: 1rem;
             font-size: 0.9rem; }
-          .map-section .container .map-img .card-lamela article .card-text {
+          .map-section .container .map-img .card-lamela article .card_text {
             font-size: 0.85rem; }
+            .map-section .container .map-img .card-lamela article .card_text p:last-child {
+              margin-top: 10px; }
         .map-section .container .map-img .card-lamela .img-wrapper {
           flex: 0 0 30%;
           width: 30%;
@@ -1037,6 +1481,14 @@ header {
           top: 0;
           right: 0;
           transform: scale(1); }
+
+section.pano {
+  position: relative;
+  margin-bottom: 150px; }
+  section.pano iframe {
+    width: 100%;
+    height: 80vh;
+    display: block; }
 
 .resort .resort_inner {
   display: flex;

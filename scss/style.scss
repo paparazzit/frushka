@@ -10,6 +10,9 @@
 @import "kontakt";
 @import "resort";
 @import "nacionalniPark";
+@import "lokacija";
+@import "apartmani";
+@import "animations";
 // HEADER
 header {
 	margin-top: 57px;
@@ -119,12 +122,12 @@ header {
 }
 
 .map-section {
-	margin-top: 100px;
+	margin-top: 150px;
 	background-color: $bg_green;
 	background-image: url(/assets/map/map-bg.png);
 	background-size: cover;
 	background-position: center;
-	margin-bottom: 50px;
+	margin-bottom: 150px;
 	padding: 30px 0 30px 0;
 	transition: 0.3s all ease-in-out;
 	&.opacity_0 {
@@ -148,20 +151,31 @@ header {
 				@include underline_hdl(50%, $accents_green, 1.5rem, 1.5rem);
 			}
 			p {
-				// border: 1px solid red;
 				display: block;
-				width: 70%;
+				width: 90%;
 				font-size: 0.85rem;
+				font-weight: 500;
+
 				@include underline_hdl(50%, $accents_green, 1.5rem, 1.5rem);
 			}
 			ol {
 				list-style-position: inside;
+				list-style: none;
 				li {
 					font-size: 0.9rem;
 					margin-bottom: 0.7em;
 					cursor: pointer;
+					span {
+						font-weight: 500;
+						font-size: 1rem;
+						color: $accents_green;
+					}
 
 					&:hover {
+						font-weight: 600;
+						color: $accents_green;
+					}
+					&.active {
 						font-weight: 600;
 						color: $accents_green;
 					}
@@ -179,30 +193,63 @@ header {
 			background-repeat: no-repeat;
 			position: relative;
 
-			img {
+			& > img {
 				width: 100%;
 				display: block;
 			}
-			.lamela {
+			.point_wrapper {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+
+				&.hovering {
+					img {
+						transform: scale(1.15);
+						transition: 0.2s all ease;
+					}
+					h3 {
+						transform: scale(1.14);
+						transition: 0.2s all ease;
+					}
+				}
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: absolute;
+					top: 0;
+					z-index: 0;
+					object-fit: cover;
+					-o-object-fit: cover;
+				}
+				h3 {
+					position: relative;
+					z-index: 1010;
+					color: $accents_green;
+					margin-top: -3px;
+				}
+			}
+			.lamele {
 				display: block;
-				// width: 85px;
-				// height: 40px;
-				// border: 1px solid red;
+
 				position: absolute;
 				transform: translate(-50%, -50%);
 				cursor: pointer;
 				// border: 1px solid red;
-				border: 1px solid red;
-				&.lamela-1 {
+
+				&.lamela_1 {
 					top: 48.5%;
-					right: 27.5%;
+					right: 27%;
+
 					&:hover {
 						background: rgba(255, 0, 0, 0.178);
 					}
 				}
-				&.lamela-2 {
+				&.lamela_2 {
 					top: 53%;
-					right: 37%;
+					right: 36.5%;
 					&:hover {
 						background: rgba(0, 128, 0, 0.301);
 					}
@@ -223,6 +270,29 @@ header {
 				// border: 1px solid red;
 				@include flex(center, space-between, nowrap, row);
 				// display: none;
+				.close_lml {
+					width: 1.3rem;
+					height: 1.3rem;
+					cursor: pointer;
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					box-sizing: border-box;
+
+					span {
+						box-sizing: border-box;
+						// display: block;
+						position: absolute;
+						height: 1.3rem;
+						border-left: 2px solid $fnt_clr;
+						transform: rotate(45deg);
+						left: 11px;
+						top: 0;
+						&:last-child {
+							transform: rotate(-45deg);
+						}
+					}
+				}
 				article {
 					padding: 20px;
 					flex: 0 0 70%;
@@ -236,8 +306,13 @@ header {
 						margin-bottom: 1rem;
 						font-size: 0.9rem;
 					}
-					.card-text {
+					.card_text {
 						font-size: 0.85rem;
+						p {
+							&:last-child {
+								margin-top: 10px;
+							}
+						}
 					}
 				}
 				.img-wrapper {
@@ -252,16 +327,7 @@ header {
 						height: 100%;
 					}
 				}
-				// .ev-block {
-				// 	position: absolute;
-				// 	width: 100%;
-				// 	height: 100%;
-				// 	top: 0;
-				// 	right: 0;
-				// 	left: 0;
-				// 	bottom: 0;
-				// 	z-index: 1;
-				// }
+
 				&.show_info {
 					opacity: 1;
 					z-index: 10;
@@ -271,6 +337,17 @@ header {
 				}
 			}
 		}
+	}
+}
+
+// pano
+section.pano {
+	position: relative;
+	margin-bottom: 150px;
+	iframe {
+		width: 100%;
+		height: 80vh;
+		display: block;
 	}
 }
 

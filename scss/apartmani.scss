@@ -1,0 +1,360 @@
+section.apartmani_hero {
+	margin: 150px 0;
+	position: relative;
+	.img_wrapper {
+		position: relative;
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			-o-object-fit: cover;
+			object-position: center;
+			-o-object-position: center;
+			display: block;
+		}
+		.card_pointer {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			// border: 1px solid red;
+			.bubble_line {
+				position: absolute;
+				height: 0px;
+				width: 1px;
+				background: black;
+				bottom: 50%;
+				left: 50%;
+				transform: rotate(-15deg);
+				-o-transform: rotate(-15deg);
+				transform-origin: bottom;
+			}
+			&.lml_1 {
+				top: 46%;
+				left: 54%;
+
+				&.point_active {
+					.pointer_bubble {
+						animation: pointer_bubble 0.5s forwards;
+						animation-delay: 0.7s;
+					}
+					.bubble_line {
+						animation: bubble_line 0.5s forwards;
+						animation-delay: 0.5s;
+					}
+				}
+			}
+			&.lml_2 {
+				top: 55%;
+				left: 78%;
+				&.point_active {
+					.bubble_line {
+						animation: bubble_line 0.5s forwards;
+						animation-delay: 0.3s;
+					}
+					.pointer_bubble {
+						animation: pointer_bubble 0.5s forwards;
+						animation-delay: 0.9s;
+					}
+				}
+			}
+			.pointer_bubble {
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				background: rgba(0, 0, 0, 0.521);
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				border-radius: 50%;
+				bottom: calc(100% + 50px);
+				left: -60px;
+				transform: scale(0);
+
+				h2 {
+					line-height: 1;
+				}
+				p {
+					font-size: 0.7rem;
+				}
+			}
+		}
+	}
+	.apartmani_card {
+		position: absolute;
+		background: white;
+		padding: 40px 0;
+		top: -10%;
+		left: 5%;
+		border-radius: 5px;
+		box-shadow: 3px 3px 8px rgba(59, 59, 59, 0.247);
+		width: 30%;
+		min-width: 520px;
+
+		text-align: center;
+		h2 {
+			font-size: 3rem;
+		}
+		h3 {
+			font-family: $fnt_accent;
+			font-size: 2rem;
+			color: $accents_green_lgt;
+			&::after {
+				content: "";
+				display: block;
+				width: 70px;
+				background: $accents_green_lgt;
+				height: 1px;
+				margin: 25px auto 25px auto;
+			}
+		}
+		p {
+			width: 80%;
+			margin: 0 auto 20px auto;
+		}
+	}
+}
+
+// APARTMANI DETAILS
+
+section.details {
+	margin-bottom: 150px;
+	.container {
+		.row {
+			display: flex;
+			align-items: stretch;
+			justify-content: space-between;
+			margin: 30px 0;
+			padding: 20px;
+			// overflow: hidden;
+			&#drop_row {
+				margin-top: -340px;
+				transition: 0.5s all ease-in-out;
+				&.show_more {
+					margin-top: 30px;
+				}
+			}
+			th {
+				font-weight: 400;
+			}
+			table {
+				text-align: center;
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				th,
+				td {
+					padding: 15px;
+					text-align: center;
+					border-top: 1px solid $table_br;
+					border-right: 1px solid $table_br;
+					&:last-child {
+						border-right: none;
+					}
+					&.m2 {
+						background: $accents_green_lgt;
+						color: white;
+					}
+					&.invisible {
+						border-right: none;
+					}
+				}
+			}
+			.tlc_wrapper {
+				flex: 0 0 43%;
+				width: 43%;
+
+				img {
+					width: 80%;
+					display: block;
+				}
+			}
+			.apart_desc {
+				flex: 0 0 54%;
+				width: 54%;
+
+				& > h2 {
+					font-size: 2.8rem;
+				}
+				.tip_lg {
+					border-top: 2px solid $accents_green;
+					padding: 20px 0;
+					display: flex;
+					justify-content: space-between;
+					.dostupnost {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						p {
+							margin-left: 20px;
+							&.dost {
+								color: $accents_green_lgt;
+								align-self: flex-end;
+							}
+						}
+					}
+				}
+				.apartman_text {
+					p {
+						margin-bottom: 20px;
+					}
+				}
+			}
+			.apartman_table {
+				flex: 0 0 43%;
+				position: relative;
+				overflow: hidden;
+				transition: 0.5s all ease-in-out;
+				transform: scaleY(0.5);
+				transform-origin: top center;
+				opacity: 0;
+				padding: 10px;
+				&.show_more {
+					opacity: 1;
+					transform: scaleY(1);
+				}
+				h2 {
+					margin-left: 20px;
+					margin-bottom: 20px;
+				}
+
+				.napomena {
+					margin-top: 20px;
+					padding: 0 20px 20px 20px;
+					h3 {
+						font-size: 1.1rem;
+					}
+					p {
+						font-size: 0.8rem;
+						line-height: 1.5;
+					}
+				}
+			}
+			.tbl_shadow {
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.295);
+				border-radius: 5px;
+			}
+			.right_cell {
+				flex: 0 0 54%;
+				width: 54%;
+
+				h2 {
+					margin-left: 20px;
+					margin-bottom: 20px;
+				}
+				.lamela_table {
+					transition: 0.5s all ease-in-out;
+					padding: 10px;
+					opacity: 0;
+					transform: scaleY(0.5);
+					transform-origin: top center;
+					&.show_more {
+						opacity: 1;
+						transform: scaleY(1);
+					}
+				}
+				.contact_form {
+					padding: 8px;
+					transition: 0.3s all ease-in-out;
+					margin-top: 30px;
+					.contact_desc {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						border-bottom: 1px solid $table_br;
+						padding-bottom: 20px;
+						padding-top: 10px;
+						h2 {
+							margin: 0 0 0 20px;
+						}
+						p {
+							font-size: 0.85rem;
+						}
+					}
+					form {
+						margin-top: 35px;
+						& > * {
+							display: flex;
+							justify-content: space-between;
+							margin-bottom: 10px;
+							label {
+								width: 30%;
+								margin-left: 20px;
+								font-family: $hdln_font;
+								color: $fnt_light;
+								font-size: 1rem;
+								// letter-spacing: 0.9px;
+							}
+							input,
+							textarea {
+								width: 70%;
+								border: 1px solid $table_br;
+								padding: 8px;
+								border-radius: 3px;
+								font-family: $text-font;
+								font-size: 0.95rem;
+							}
+							textarea {
+								resize: none;
+								height: 150px;
+							}
+							&.buttons {
+								justify-content: flex-end;
+								.btn {
+									border: none;
+									width: 200px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.toggle_btn {
+			text-align: center;
+			padding: 10px 0;
+			border-bottom: 1px solid $table_br;
+			h3 {
+				font-size: 1rem;
+				color: $fnt_light;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+// render
+section.render_apart {
+	.pano_wrapper {
+		width: 100%;
+
+		position: relative;
+
+		img {
+			width: 100%;
+
+			display: block;
+
+			z-index: 1;
+		}
+		.fullScreen {
+			&::before {
+				content: "Proverite dosupnost na 3D modelu";
+				position: absolute;
+				right: 120%;
+				color: white;
+				width: 290px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+section.apart_slider {
+	margin-bottom: 150px;
+}

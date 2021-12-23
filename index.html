@@ -19,9 +19,9 @@
 					<div class="drop_down">
 						<a class="link active_nav" href="#">početna</a>
 						<a class="link" href="projekat.html">o projektu</a>
-						<a class="link" href="#">lokacija</a>
+						<a class="link" href="lokacija.html">lokacija</a>
 						<a class="link" href="resort.html">resort</a>
-						<a class="link" href="#">apartmani</a>
+						<a class="link" href="apartmani.html">apartmani</a>
 						<a class="link" href="nacionalniPark.html">nacionalni park</a>
 						<a class="link" href="investitor.html">investitor</a>
 					</div>
@@ -548,57 +548,142 @@
 								predstavljaju idealnu lokaciju za svakodnevni život na planini.
 							</p>
 							<ol>
-								<li>Premier resort apartmani</li>
-								<li>Istorijski spomenik Vrdnička kula</li>
-								<li>Etno kompleks Vrdnička kula</li>
-								<li>Resort Fruške terme</li>
-								<li>Otvoreni bazeni</li>
-								<li>Hotel Premier Aqua</li>
-								<li>Sportski centar</li>
-								<li>Staza zdravlja</li>
+								<li class="location"><span>1.</span> Premier resort apartmani</li>
+								<li class="location"><span>2.</span> Istorijski spomenik Vrdnička kula</li>
+								<li class="location"><span>3.</span> Etno kompleks Vrdnička kula</li>
+								<li class="location"><span>4.</span> Resort Fruške terme</li>
+								<li class="location"><span>5.</span> Otvoreni bazeni</li>
+								<li class="location"><span>6.</span> Hotel Premier Aqua</li>
+								<li class="location"><span>7.</span> Sportski centar</li>
+								<li class="location"><span>8.</span> Staza zdravlja</li>
 							</ol>
 							<a href="#" class="btn white mt-2"
 								>Saznaj više <img src="assets/thin_big_right.png" alt=""
 							/></a>
 						</article>
-						<article class="map-img">
-							<img src="assets/map/mapa-img.png" alt="" />
+						<article class="map-img" id="map_container">
+							<img src="assets/map/map_img.png" alt="" />
+							<div class="lamela_1 lamele" id="lamela_1"></div>
+							<div class="lamela_2 lamele" id="lamela_2"></div>
 							<div
-								class="lamela lamela-1"
-								data-lamela="lamela1"
-								data-in="0"
-							></div>
-							<div
-								class="lamela lamela-2"
-								data-lamela="lamela2"
-								data-in="1"
-							></div>
-	
-							<div class="card-lamela">
+							class="point_wrapper _1"
+							data-point="1"
+							data-top="44"
+							data-left="53"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+
+						<div
+							class="point_wrapper _2"
+							data-point="2"
+							data-left="24"
+							data-top="26"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+						 
+						<div
+							class="point_wrapper _3"
+							data-point="3"
+							data-left="41"
+							data-top="33"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+
+						<div
+							class="point_wrapper _4"
+							data-point="4"
+							data-left="35"
+							data-top="42"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+
+						<div
+							class="point_wrapper _5"
+							data-point="5"
+							data-left="38"
+							data-top="58"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+
+						<div
+							class="point_wrapper _6"
+							data-point="6"
+							data-left="72.2"
+							data-top="84"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+
+						
+						<div
+							class="point_wrapper _7"
+							data-point="7"
+							data-left="63"
+							data-top="90"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+
+						<div
+							class="point_wrapper _8"
+							data-point="8"
+							data-left="55.5"
+							data-top="60"
+						>
+							<img src="assets/map/map_marker.png" alt="" />
+							<h3></h3>
+						</div>
+
+						<!-- <div class="lamelaInfo" id="lamela_info">
+							<div class="img_wrapper">
+								<img src="" alt="" />
+							</div>
+							<div class="lamela_content">
+								<h2></h2>
+								<h3></h3>
+								<div class="card_text"></div>
+							</div> -->
+
+							
+						
+							
+							<div class="card-lamela" id="lamela_info">
+								<div class="close_lml"><span></span> <span></span></div>
 								<div class="img-wrapper">
 									<img class="l-img" src="assets/map/lamela-1.png" alt="" />
 								</div>
 								<article>
 									<h3 class="l-title">Frušle Residence</h3>
 									<p class="subHeading l-sub">Premiere resort apartmani</p>
-									<p class="card-text">
-										<span class="text-1">
-											Fruške Residence se sastoji od 140 apartmana, za ličnu
-											upotrebu ili za izdavanje – izbor je isključivo Vaš!
-										</span>
-										<br />
-										<br />
-										<span class="text-2">
-											Apartmani nude udobnost i potpuni komfor za svakodnevni
-											život, ali na drugačiji način od života u gradu.
-										</span>
-									</p>
+									<div class="card_text">
+										
+									</div>
 								</article>
 							</div>
 						</article>
 					</div>
 				</section>
 				<!-- #endregion -->
+				<section class="pano">
+					<iframe src="https://mag.archi/Ciklorama-Terme/" frameborder="0"></iframe>
+					<a href="https://mag.archi/Ciklorama-Terme/" target="blank" class="fullScreen">
+						<div class="top"></div>
+						<div class="bottom"></div>
+					</a>
+				</section>
+				
 				<section class="resort">
 					<article class="resort_inner">
 						<div class="img_wrapper ">
@@ -624,6 +709,7 @@
 						</div>
 					</article>
 				</section>
+				
 				<section class="sliderSection" id="mySlide1">
 					<div class="slider" id="slider1">
 						<div class="touchLeft"></div>
@@ -835,6 +921,7 @@
 	
 		<script src="js/SmoothScroll.js"></script>
 		<script src="js/slider.js"></script>
+		<script src="js/map_opp.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
