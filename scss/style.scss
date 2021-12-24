@@ -393,7 +393,7 @@ section.pano {
 	margin: 100px 0;
 	.apartmani_wrapper {
 		position: relative;
-		border: 1px solid green;
+
 		height: 671px;
 
 		.card-wrapper {
@@ -420,7 +420,7 @@ section.pano {
 			// overflow: hidden;
 			// overflow: hidden;
 			display: block;
-			border: 1px solid red;
+
 			height: 100%;
 			overflow: hidden;
 		}
@@ -477,15 +477,23 @@ section.pano {
 				width: 33.33%;
 				height: 704px;
 				margin-left: 20px;
+				position: relative;
 				&:first-child {
 					margin-left: 0;
 				}
-				img {
+				img:first-child {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
 					-o-object-fit: cover;
 					display: block;
+				}
+				.slider_num {
+					position: absolute;
+					z-index: 2020;
+					bottom: -5%;
+					right: 20px;
+					width: 75%;
 				}
 			}
 		}
