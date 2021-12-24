@@ -7,55 +7,236 @@ nav {
 	left: 0;
 	// border: 1px solid red;
 	padding: 18px 5% 18px 10%;
-	@include flex(center, space-between, nowrap, row);
+
 	border-bottom: 1px solid lighten($fnt_clr, 70%);
-	.drop_down {
-		.link {
-			font-size: 0.75rem;
-			text-transform: uppercase;
-			margin-right: 1.2rem;
-			font-family: $hdln_font;
-			font-weight: 600;
-			&:last-child {
-				margin-right: 0;
+	.drop_wrapper {
+		width: 100%;
+		@include flex(center, space-between, nowrap, row);
+		.mob_logo {
+			display: none;
+		}
+		.drop_down {
+			.link {
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				margin-right: 1.2rem;
+				font-family: $hdln_font;
+				font-weight: 600;
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 		}
-	}
-	.sideNav {
-		@include flex(center, center, nowrap, row);
-		font-size: 0.75rem;
-		.icons {
-			@extend .sideNav;
-			.nav-item {
-				cursor: pointer;
-				margin: 0 1rem;
+		.sideNav {
+			@include flex(center, center, nowrap, row);
+			font-size: 0.75rem;
 
-				@extend .sideNav;
-				.nav_img {
-					margin-right: 0.5rem;
-					@extend .sideNav;
-					svg {
-						height: 15px;
-						width: 15px;
-						path {
-							transition: $transition-out;
+			.icons {
+				@include flex(center, center, nowrap, row);
+				.nav-item {
+					cursor: pointer;
+					margin: 0 1rem;
+
+					@include flex(center, center, nowrap, row);
+					.nav_img {
+						margin-right: 0.5rem;
+						@include flex(center, center, nowrap, row);
+						svg {
+							height: 15px;
+							width: 15px;
+							path {
+								transition: $transition-out;
+							}
 						}
 					}
-				}
-				&:hover {
-					.nav_img {
-						svg {
-							path {
-								transition: $transition-in;
-								fill: $accents_green_drk;
+					&:hover {
+						.nav_img {
+							svg {
+								path {
+									transition: $transition-in;
+									fill: $accents_green_drk;
+								}
 							}
 						}
 					}
 				}
 			}
+			.langs {
+				margin-left: 1rem;
+			}
 		}
-		.langs {
-			margin-left: 1rem;
+	}
+
+	.burger {
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+
+		height: 0.9rem;
+		width: 1.3rem;
+		transition: $transition-out;
+		// overflow: hidden;
+		cursor: pointer;
+		position: relative;
+		z-index: 2020;
+		span {
+			display: block;
+			height: 2px;
+			width: 100%;
+			background: $fnt_clr;
+			pointer-events: none;
+		}
+		&.active {
+			transition: $transition-in;
+		}
+	}
+
+	@media (max-width: 1225px) {
+		display: flex;
+		justify-content: flex-end;
+		.burger {
+			display: flex;
+		}
+		.drop_wrapper {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: $fnt_clr;
+			position: absolute;
+			top: 0px;
+			right: 0;
+			width: 400px;
+			overflow: hidden;
+			height: 0;
+			min-height: 0;
+			max-height: 0;
+			transition: $transition-out;
+			&.show_nav {
+				transition: $transition-in;
+				min-height: 100vh;
+				max-height: 100vh;
+			}
+			.drop_down {
+				display: flex;
+				flex-direction: column;
+
+				width: 80%;
+				padding: 0 18%;
+				.link {
+					font-size: 1rem;
+					color: $white;
+					margin: 0 0 10px 0;
+					&.active_nav {
+						color: $accents_green_lgt;
+					}
+				}
+				border-bottom: 1px solid $accents_green_lgt;
+
+				padding-bottom: 8%;
+			}
+			.sideNav {
+				flex-direction: column;
+				margin-top: 10%;
+				width: 80%;
+				padding: 0 20%;
+
+				.icons {
+					flex-direction: column;
+					justify-content: center;
+					align-items: flex-start;
+					width: 100%;
+
+					.nav-item {
+						margin: 10px 0;
+						.nav_img {
+							// border: 1px solid red;
+							svg {
+								width: 20px;
+								height: 20px;
+							}
+						}
+						a {
+							color: white;
+							font-size: 0.95rem;
+						}
+					}
+				}
+				.langs {
+					margin-top: 10%;
+					.lang {
+						color: $white;
+						margin-right: 20px;
+						font-size: 0.9rem;
+						&:last-child {
+							margin-right: 0;
+						}
+						&.active_nav {
+							color: $accents_green_lgt;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 550px) {
+		.drop_wrapper {
+			width: 80%;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			& > * {
+				// border: 1px solid white;
+			}
+			.drop_down {
+				width: unset;
+				padding: 0;
+				flex: 0 0 1;
+				width: 168px;
+				border: none;
+				position: relative;
+				&::before {
+					content: "";
+					display: block;
+					width: 120%;
+					height: 1px;
+					background: $accents_green_lgt;
+					margin-bottom: 20px;
+					transform: translateX(-10%);
+				}
+				&::after {
+					content: "";
+					display: block;
+					width: 120%;
+					height: 1px;
+					background: $accents_green_lgt;
+					margin-top: 20px;
+					transform: translateX(-10%);
+				}
+			}
+			.mob_logo {
+				flex: 0 0 1;
+				display: block;
+
+				width: 80%;
+				margin: 0 auto;
+				img {
+					height: 120px;
+					display: block;
+					margin: 0 auto;
+				}
+			}
+			.sideNav {
+				flex: 0 0 1;
+				width: 168px;
+				margin: 0;
+				padding: 0;
+				// width: unset;
+			}
 		}
 	}
 }
+
+// MBOILE

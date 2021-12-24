@@ -4,6 +4,7 @@ let apartmani_table = document.querySelector(".apartman_table");
 let lamele_table = document.querySelector(".lamela_table");
 let contact_form = document.querySelector(".contact_form");
 let drop_row = document.querySelector("#drop_row");
+
 more_less.addEventListener("click", show_more_info);
 
 function show_more_info() {

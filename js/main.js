@@ -6,6 +6,37 @@ let slider_2;
 let slider2 = document.querySelector("#mySlide2");
 let map_1;
 let map_section_1 = document.querySelector("#map_container");
+let burger = document.querySelector(".burger");
+let drop_down_nav = document.querySelector(".drop_wrapper");
+let links = document.querySelectorAll(".drop_down .link");
+
+function show_drop_nav(e) {
+	if (e.target.classList.contains("burger")) {
+		drop_down_nav.classList.toggle("show_nav");
+
+		if (drop_down_nav.classList.contains("show_nav")) {
+			links.forEach((link) => {
+				link.addEventListener("click", pageTrans);
+			});
+		}
+	} else {
+		drop_down_nav.classList.remove("show_nav");
+	}
+}
+
+window.addEventListener("click", show_drop_nav);
+
+function pageTrans(e) {
+	let location = e.target.getAttribute("href");
+
+	e.preventDefault();
+
+	drop_down_nav.classList.remove("show_nav");
+	setTimeout(() => {
+		window.location.href = location;
+	}, 450);
+}
+
 if (slider2) {
 	slider_2 = new Slider("slider2");
 }
@@ -132,7 +163,6 @@ function apear_In(items, ws) {
 function apartmani_set() {
 	let card_lml_points = document.querySelectorAll(".card_pointer");
 	if (window.scrollY > 150) {
-		console.log("EVO GA");
 		card_lml_points.forEach((card_point) => {
 			card_point.classList.add("point_active");
 		});
