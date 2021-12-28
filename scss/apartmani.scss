@@ -122,7 +122,106 @@ section.apartmani_hero {
 
 section.details {
 	margin-bottom: 150px;
+	position: relative;
 	.container {
+		.detalji_opt {
+			position: absolute;
+			top: -25%;
+			width: 370px;
+			// height: 150px;
+			background: $white;
+			border-radius: 5px;
+			padding: 15px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.219);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			.detalji_text {
+				flex: 0 0 100%;
+				width: 100%;
+				font-weight: 500;
+				margin-bottom: 20px;
+				margin-top: 40px;
+			}
+			.select_container {
+				flex: 0 0 53%;
+				width: 53%;
+				position: relative;
+				display: flex;
+				align-self: flex-start;
+				justify-content: center;
+				flex-direction: column;
+				&:last-child {
+					flex: 0 0 43%;
+					width: 53%;
+				}
+				.selected {
+					cursor: pointer;
+					border: 1px solid $table_br;
+					padding: 8px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					position: relative;
+					&::after {
+						content: "";
+						background: url("../assets/apartmani/select_icon.svg");
+						position: absolute;
+						background-size: contain;
+						background-repeat: no-repeat;
+						width: 20px;
+						height: 20px;
+						right: 5px;
+						transition: 0.4s all ease;
+					}
+				}
+				.options {
+					// display: none;
+					position: absolute;
+					top: calc(100% - 1px);
+					order: 1;
+
+					background: white;
+					width: 100%;
+					border: 1px solid $table_br;
+					border-top: none;
+					max-height: 0;
+					opacity: 0;
+					overflow: hidden;
+					transition: $transition-out;
+					z-index: -1;
+
+					.option {
+						padding: 5px 0;
+
+						cursor: pointer;
+						label {
+							padding: 0 5px;
+							pointer-events: none;
+						}
+						input {
+							display: none;
+						}
+						&:hover {
+							background-color: lighten($fnt_light, 60%);
+						}
+					}
+					&.active_drop {
+						opacity: 1;
+						z-index: 1010;
+					}
+				}
+				&.active {
+					.selected {
+						&::after {
+							transform: rotate(90deg);
+						}
+					}
+				}
+			}
+		}
 		.row {
 			display: flex;
 			align-items: stretch;

@@ -23,7 +23,6 @@ function show_drop_nav(e) {
 		drop_down_nav.classList.remove("show_nav");
 	}
 }
-
 window.addEventListener("click", show_drop_nav);
 
 function pageTrans(e) {
