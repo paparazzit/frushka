@@ -382,6 +382,39 @@ header {
 			}
 		}
 	}
+	@media (max-width: 645px) {
+		.container {
+			padding-left: 0;
+			.map-legend {
+				// border: 2px solid white;
+				flex: 0 0 80%;
+				width: 80%;
+				min-width: 340px;
+				display: flex;
+				align-items: center;
+				justify-content: end;
+				flex-wrap: wrap;
+				& > * {
+					// border: 1px solid red;
+					flex: 0 0 80%;
+					min-width: 320px;
+				}
+				h2 {
+					font-size: 3.4rem;
+				}
+				ol {
+					li {
+						font-size: 1rem;
+					}
+				}
+			}
+			.map-img {
+				flex: 0 0 100%;
+				width: 100%;
+				min-width: 340px;
+			}
+		}
+	}
 }
 
 // pano
@@ -463,7 +496,6 @@ section.pano {
 			}
 		}
 		@media (max-width: 600px) {
-			border: 1px solid red;
 			.img_wrapper {
 				min-width: 100px;
 				flex: 0 0 100%;
@@ -504,7 +536,14 @@ section.pano {
 		position: relative;
 
 		height: 671px;
-
+		& > .img-wrapper {
+			img {
+				object-position: center;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
 		.card-wrapper {
 			position: absolute;
 			width: 550px;
@@ -532,6 +571,17 @@ section.pano {
 
 			height: 100%;
 			overflow: hidden;
+		}
+	}
+	@media (max-width: 650px) {
+		.apartmani_wrapper {
+			.card-wrapper {
+				bottom: -10%;
+				width: 80%;
+				min-width: 340px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 	}
 }
@@ -686,6 +736,7 @@ section.pano {
 			}
 		}
 	}
+
 	@media (max-width: 768px) {
 		.vertical_txt {
 			display: none;
@@ -696,7 +747,27 @@ section.pano {
 			}
 		}
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 470px) {
+		.touchLeft {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 78%;
+			width: 50%;
+
+			z-index: 2020;
+			cursor: pointer;
+		}
+		.touchRight {
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 78%;
+			width: 50%;
+
+			z-index: 2020;
+			cursor: pointer;
+		}
 		.vertical_txt {
 			display: none;
 		}
@@ -818,6 +889,19 @@ section.pano {
 			}
 		}
 	}
+	@media (max-width: 640px) {
+		height: 720px;
+		flex-direction: column;
+		.fruska_wrapper {
+			flex: 0 0 50%;
+			width: 100%;
+			height: 50%;
+			img.fruska_logo {
+				height: 70%;
+				width: unset;
+			}
+		}
+	}
 }
 
 .division_cards {
@@ -928,10 +1012,15 @@ section.pano {
 	position: relative;
 	margin-bottom: 100px;
 
+	height: 650px;
+
 	& > img {
 		width: 100%;
 		display: block;
 		opacity: 0.5;
+		height: 100%;
+		object-fit: cover;
+		-o-object-fit: cover;
 	}
 	.overlay_hg {
 		position: absolute;
@@ -996,16 +1085,15 @@ section.pano {
 					width: 25px;
 					position: relative;
 					z-index: 4;
-					// width: 80%;
 				}
 				img.blured {
 					position: absolute;
 
-					// display: none;
-					border: 1px solid red;
 					z-index: 0;
 					left: 50%;
-					transform: translate(-50%, -50%);
+					transform: translateX(-50%);
+					object-fit: cover;
+					-o-object-fit: cover;
 					filter: blur(1px);
 					opacity: 0.5;
 				}
@@ -1017,6 +1105,22 @@ section.pano {
 				font-size: 1rem;
 				font-weight: 200;
 				letter-spacing: 1px;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		height: 450px;
+		.overlay_hg {
+			width: 80%;
+			min-width: 280px;
+			padding: 0px;
+			.hg_text {
+				h2 {
+					font-size: 3.2rem;
+				}
+				p {
+					font-size: 0.9rem;
+				}
 			}
 		}
 	}

@@ -85,7 +85,8 @@ if (map_section_1) {
 // SLIDER
 
 function blur_img() {
-	let blur_container = document.querySelector(".videoSection");
+	let blur_container = document.querySelector(".videoSection img");
+	let videoSection = document.querySelector(".videoSection");
 	if (blur_container) {
 		let blurImg = document.querySelector(".blured");
 		let play_container = document.querySelector(".play_btn");
@@ -97,7 +98,11 @@ function blur_img() {
 
 		blurImg.style.height = b_height + "px";
 		blurImg.style.width = b_width + "px";
-		blurImg.style.top = 0 + "px";
+		blurImg.style.top =
+			-(
+				play_container.offsetTop +
+				(videoSection.offsetHeight - hg.offsetHeight) / 2
+			) + "px";
 	}
 
 	// console.log(blurImg.offsetTop);
@@ -185,3 +190,51 @@ window.addEventListener("scroll", () => {
 });
 
 // PROJECT
+let loader_art = document.querySelector(".loader");
+let loader_count = document.querySelector(".loader_cont");
+var load_page_images = [],
+	load_page_im = [],
+	load_page_panos = [],
+	load_page_p = [],
+	load_page_count = 0,
+	load_page_fin = 0,
+	loader_po = false;
+ret = 0;
+load_page_start();
+function load_page_start() {
+	let imgs = document.querySelectorAll("img");
+	let pano = document.querySelectorAll(".pano iframe");
+
+	imgs.forEach((img) => {
+		load_page_images.push(img);
+	});
+	pano.forEach((pan) => {
+		load_page_panos.push(pan);
+	});
+	load_page_count = load_page_images.length + load_page_panos.length;
+	for (let i = 0; i < load_page_images.length; i++) {
+		load_page_im[i] = new Image();
+		load_page_im[i].src = load_page_images[i].src;
+		load_page_im[i].addEventListener("load", load_page_update);
+	}
+	for (let i = 0; i < load_page_panos.length; i++) {
+		load_page_p.push(load_page_panos[i]);
+		load_page_p[i].addEventListener("load", load_page_update);
+	}
+}
+
+function load_page_update() {
+	load_page_fin++;
+	// console.log(load_page_count);
+	if (load_page_count > 0) {
+		ret = Math.ceil((100 * load_page_fin) / load_page_count);
+	}
+	if (ret > 98) {
+		loader_art.classList.add("remove_load");
+		setTimeout(() => {
+			loader_art.classList.add("disable");
+		}, 300);
+	}
+
+	loader_count.innerHTML = ret + "%";
+}

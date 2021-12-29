@@ -8,7 +8,7 @@ function Slider(slider) {
 		this.current_item = this.slider.querySelector("#curent_itm");
 		this.total_items = this.slider.querySelector("#total_itm");
 		this.left = this.slider.querySelector(".touchLeft");
-		this.touch = this.slider.querySelector(".touchRight");
+		this.right = this.slider.querySelector(".touchRight");
 	} else {
 		console.log("nema ga");
 	}
@@ -28,7 +28,7 @@ function Slider(slider) {
 		this.width = this.slider.offsetWidth;
 		if (this.width > 900) {
 			this.slideDims = { perPage: 3, slideRadio: 0 };
-		} else if (this.width < 900 && this.width > 450) {
+		} else if (this.width < 900 && this.width > 470) {
 			this.slideDims = { perPage: 2, slideRadio: 1 };
 		} else {
 			this.slideDims = { perPage: 1, slideRadio: 2 };
@@ -46,6 +46,12 @@ function Slider(slider) {
 	});
 	this.btn_prev.addEventListener("click", () => {
 		this.prevSlide();
+	});
+	this.left.addEventListener("click", () => {
+		this.prevSlide();
+	});
+	this.right.addEventListener("click", () => {
+		this.nextSlide(this.resizeDims);
 	});
 
 	// SET SLIDER WIDTH

@@ -60,6 +60,7 @@ h6 {
   font-weight: 400; }
 
 body {
+  position: relative;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -161,6 +162,30 @@ ul {
       border-left: 3px solid white;
       bottom: 4px;
       left: 4px; }
+
+.loader {
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
+  z-index: 6040;
+  background-color: white;
+  transform: translateX(0);
+  top: 0;
+  left: 0;
+  transition: 1s all ease;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .loader .loader_cont {
+    color: #373737;
+    font-size: 10rem; }
+  .loader.remove_load {
+    opacity: 0; }
+  .loader.disable {
+    display: none; }
 
 footer {
   position: relative; }
@@ -1919,6 +1944,28 @@ header {
               right: 10%;
               transform: translateY(-50%);
               z-index: 2020; } }
+  @media (max-width: 645px) {
+    .map-section .container {
+      padding-left: 0; }
+      .map-section .container .map-legend {
+        flex: 0 0 80%;
+        width: 80%;
+        min-width: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-wrap: wrap; }
+        .map-section .container .map-legend > * {
+          flex: 0 0 80%;
+          min-width: 320px; }
+        .map-section .container .map-legend h2 {
+          font-size: 3.4rem; }
+        .map-section .container .map-legend ol li {
+          font-size: 1rem; }
+      .map-section .container .map-img {
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 340px; } }
 
 section.pano {
   position: relative;
@@ -1981,35 +2028,38 @@ section.pano {
       flex: 0 0 40%;
       width: 40%; } }
   @media (max-width: 600px) {
-    .resort .resort_inner {
-      border: 1px solid red; }
-      .resort .resort_inner .img_wrapper {
-        min-width: 100px;
-        flex: 0 0 100%;
-        width: 100%;
-        height: 350px; }
-        .resort .resort_inner .img_wrapper img {
-          height: 100%;
-          object-fit: cover;
-          -o-object-fit: cover;
-          object-position: right;
-          -o-object-position: right; }
-          .resort .resort_inner .img_wrapper img.res_text {
-            display: none; }
-      .resort .resort_inner .card-wrapper {
-        min-width: 100px;
-        flex: 0 0 100%;
-        width: 100%; }
-        .resort .resort_inner .card-wrapper .card_style .circle {
+    .resort .resort_inner .img_wrapper {
+      min-width: 100px;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 350px; }
+      .resort .resort_inner .img_wrapper img {
+        height: 100%;
+        object-fit: cover;
+        -o-object-fit: cover;
+        object-position: right;
+        -o-object-position: right; }
+        .resort .resort_inner .img_wrapper img.res_text {
           display: none; }
-        .resort .resort_inner .card-wrapper .card_style h2 {
-          font-size: 2.2rem; } }
+    .resort .resort_inner .card-wrapper {
+      min-width: 100px;
+      flex: 0 0 100%;
+      width: 100%; }
+      .resort .resort_inner .card-wrapper .card_style .circle {
+        display: none; }
+      .resort .resort_inner .card-wrapper .card_style h2 {
+        font-size: 2.2rem; } }
 
 .apartmani {
   margin: 100px 0; }
   .apartmani .apartmani_wrapper {
     position: relative;
     height: 671px; }
+    .apartmani .apartmani_wrapper > .img-wrapper img {
+      object-position: center;
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
     .apartmani .apartmani_wrapper .card-wrapper {
       position: absolute;
       width: 550px;
@@ -2028,6 +2078,13 @@ section.pano {
       display: block;
       height: 100%;
       overflow: hidden; }
+  @media (max-width: 650px) {
+    .apartmani .apartmani_wrapper .card-wrapper {
+      bottom: -10%;
+      width: 80%;
+      min-width: 340px;
+      left: 50%;
+      transform: translateX(-50%); } }
 
 .contact_badge {
   background-color: #0c5c34;
@@ -2151,7 +2208,23 @@ section.pano {
       display: none; }
     .sliderSection .slider .controls {
       width: 80%; } }
-  @media (max-width: 480px) {
+  @media (max-width: 470px) {
+    .sliderSection .touchLeft {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 78%;
+      width: 50%;
+      z-index: 2020;
+      cursor: pointer; }
+    .sliderSection .touchRight {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 78%;
+      width: 50%;
+      z-index: 2020;
+      cursor: pointer; }
     .sliderSection .vertical_txt {
       display: none; }
     .sliderSection .slider .controls {
@@ -2245,6 +2318,17 @@ section.pano {
         .fruska_gora .fruska_wrapper .btn {
           position: relative;
           z-index: 1010; } }
+  @media (max-width: 640px) {
+    .fruska_gora {
+      height: 720px;
+      flex-direction: column; }
+      .fruska_gora .fruska_wrapper {
+        flex: 0 0 50%;
+        width: 100%;
+        height: 50%; }
+        .fruska_gora .fruska_wrapper img.fruska_logo {
+          height: 70%;
+          width: unset; } }
 
 .division_cards {
   margin-bottom: 100px; }
@@ -2330,11 +2414,15 @@ section.pano {
 .videoSection {
   background: black;
   position: relative;
-  margin-bottom: 100px; }
+  margin-bottom: 100px;
+  height: 650px; }
   .videoSection > img {
     width: 100%;
     display: block;
-    opacity: 0.5; }
+    opacity: 0.5;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover; }
   .videoSection .overlay_hg {
     position: absolute;
     top: 50%;
@@ -2391,10 +2479,11 @@ section.pano {
           z-index: 4; }
         .videoSection .overlay_hg .video_controls .play_btn img.blured {
           position: absolute;
-          border: 1px solid red;
           z-index: 0;
           left: 50%;
-          transform: translate(-50%, -50%);
+          transform: translateX(-50%);
+          object-fit: cover;
+          -o-object-fit: cover;
           filter: blur(1px);
           opacity: 0.5; }
       .videoSection .overlay_hg .video_controls h3 {
@@ -2403,5 +2492,16 @@ section.pano {
         font-size: 1rem;
         font-weight: 200;
         letter-spacing: 1px; }
+  @media (max-width: 768px) {
+    .videoSection {
+      height: 450px; }
+      .videoSection .overlay_hg {
+        width: 80%;
+        min-width: 280px;
+        padding: 0px; }
+        .videoSection .overlay_hg .hg_text h2 {
+          font-size: 3.2rem; }
+        .videoSection .overlay_hg .hg_text p {
+          font-size: 0.9rem; } }
 
 /*# sourceMappingURL=style.css.map */
