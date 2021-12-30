@@ -382,6 +382,7 @@ header {
 			}
 		}
 	}
+
 	@media (max-width: 645px) {
 		.container {
 			padding-left: 0;
@@ -411,7 +412,43 @@ header {
 			.map-img {
 				flex: 0 0 100%;
 				width: 100%;
+
 				min-width: 340px;
+				.card-lamela {
+					flex-direction: column;
+					min-width: 296px;
+
+					.img-wrapper {
+						flex: 0 0 250px;
+						width: 100%;
+						height: 250px;
+						object-fit: cover;
+						-o-object-fit: cover;
+						object-position: bottom;
+						-o-object-position: bottom;
+						img {
+							object-fit: cover;
+							-o-object-fit: cover;
+							object-position: bottom;
+							-o-object-position: bottom;
+						}
+					}
+					article {
+						flex: 1;
+						width: 100%;
+						padding-bottom: 30px;
+						h3 {
+							font-size: 1.9rem;
+							line-height: 1.2;
+						}
+						.subHeading {
+							font-size: 1.2rem;
+						}
+					}
+					&.show_info {
+						top: 0;
+					}
+				}
 			}
 		}
 	}
@@ -426,6 +463,15 @@ section.pano {
 		width: 100%;
 		height: 80vh;
 		display: block;
+	}
+	.right_side {
+		position: absolute;
+		height: 100%;
+		width: 30px;
+
+		bottom: 0;
+		right: 0;
+		z-index: 3030;
 	}
 }
 
@@ -755,18 +801,31 @@ section.pano {
 			height: 78%;
 			width: 50%;
 
-			z-index: 2020;
+			z-index: 3020;
 			cursor: pointer;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			display: none;
 		}
 		.touchRight {
 			position: absolute;
 			right: 0;
 			top: 0;
 			height: 78%;
-			width: 50%;
-
-			z-index: 2020;
+			width: 100%;
+			border: 1px solid red;
+			z-index: 3020;
 			cursor: pointer;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 		}
 		.vertical_txt {
 			display: none;

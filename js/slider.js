@@ -47,12 +47,62 @@ function Slider(slider) {
 	this.btn_prev.addEventListener("click", () => {
 		this.prevSlide();
 	});
-	this.left.addEventListener("click", () => {
-		this.prevSlide();
+	// this.left.addEventListener("touchstart", (e) => {
+	// 	this.prevSlide();
+	// 	console.log(e.touches);
+	// });
+	this.right.addEventListener(
+		"touchmove",
+		(e) => {
+			e.preventDefault();
+		},
+		false
+	);
+	this.right.addEventListener("touchstart", (e) => {
+		this.touchDirection(e, "start");
 	});
-	this.right.addEventListener("click", () => {
-		this.nextSlide(this.resizeDims);
+	this.right.addEventListener("touchend", (e) => {
+		this.touchDirection(e, "end");
 	});
+	let touchStartPos = 0;
+	let touchEndPos = 0;
+	let touchS = 0;
+	let touchEnd = 0;
+	this.touchDirection = function (e, message) {
+		if (e.type === "touchend") {
+			touchEnd = e.timeStamp;
+			touchEndPos = e.changedTouches[0].screenX;
+			// console.log(message, touchEndPos);
+		}
+		if (e.type === "touchstart") {
+			touchS = e.timeStamp;
+			touchStartPos = e.changedTouches[0].screenX;
+			// console.log(message, touchStartPos);
+		}
+		if (touchEnd - touchS > 150) {
+			// console.log(message, c);
+			console.log(touchS, " : ", touchEnd);
+			if (touchStartPos > touchEndPos) {
+				this.nextSlide(this.resizeDims);
+			} else {
+				this.prevSlide();
+			}
+		}
+
+		// console.log(e, message);
+		// if (touchPos > e.touches[0].pageX) {
+		// 	touchCount++;
+		// 	// this.nextSlide(this.resizeDims);
+		// 	console.log(touchPos, ": ", e.touches[0].pageX);
+		// 	// console.log("DESON");
+		// } else if (touchPos < e.touches[0].pageX) {
+		// 	// this.prevSlide();
+		// 	console.log(touchPos);
+		// 	touchCount++;
+		// }
+		// touchPos = e.touches[0].pageX;
+		// // console.log(touchCount);
+	};
 
 	// SET SLIDER WIDTH
 
