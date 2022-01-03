@@ -181,6 +181,10 @@ nav {
 	}
 
 	@media (max-width: 550px) {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		overscroll-behavior: none;
 		.drop_wrapper {
 			width: 80%;
 

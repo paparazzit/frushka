@@ -126,6 +126,32 @@ section.option_icons {
 			}
 		}
 	}
+	@media (max-width: 952px) {
+		.container {
+			flex-wrap: wrap;
+			.icons_wrapper {
+				flex: 0 0 22%;
+				width: 22%;
+				.icon_text {
+					margin-top: 8px;
+				}
+			}
+		}
+	}
+	@media (max-width: 600px) {
+		margin-bottom: 130px !important;
+		.container {
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+
+			.icons_wrapper {
+				flex: 0 0 30%;
+				width: 30%;
+				min-width: 178px;
+				margin-bottom: 20px;
+			}
+		}
+	}
 }
 
 section.description {
