@@ -632,38 +632,6 @@ section.pano {
 	}
 }
 
-.contact_badge {
-	background-color: $accents_green;
-	width: 45px;
-	height: 220px;
-	position: fixed;
-	top: 57px;
-	left: 0;
-	z-index: 2020;
-	.contact-wrapper {
-		// border: 1px solid red;
-		height: 100%;
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		flex-direction: column;
-		a {
-			margin-top: 10px;
-		}
-		.contact-text {
-			position: absolute;
-			color: $white;
-			// border: 1px solid yellow;
-			// display: block;
-			transform: rotate(-90deg);
-			-o-transform: rotate(-90deg);
-			bottom: 78px;
-			left: -55px;
-			width: 150px;
-		}
-	}
-}
 .sliderSection {
 	overflow: hidden;
 	margin-top: 100px;

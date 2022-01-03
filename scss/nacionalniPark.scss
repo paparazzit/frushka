@@ -162,7 +162,7 @@ article.act_article {
 
 section.activities {
 	display: flex;
-	align-items: center;
+	align-items: stretch;
 	justify-content: space-between;
 
 	position: relative;
@@ -184,13 +184,99 @@ section.activities {
 
 		img {
 			width: 100%;
+			height: 100%;
 			display: block;
+			object-fit: cover;
 		}
 	}
 	.act_right {
 		flex: 0 0 40%;
 	}
-	@media (max-width: );
+
+	@media (max-width: 1120px) {
+		flex-wrap: wrap;
+		.act_left {
+			flex: 0 0 100%;
+			width: 100%;
+			height: 470px;
+			overflow: hidden;
+			margin-bottom: 50px;
+			img {
+				object-position: 50% 40%;
+				width: 100%;
+			}
+		}
+		.act_right {
+			flex: 0 0 100%;
+			width: 100%;
+			.act_article {
+				&:nth-child(2) {
+					display: flex;
+					align-self: stretch;
+					justify-content: space-between;
+					.act_text {
+						flex: 0 0 60%;
+						width: 60%;
+					}
+					.img_wrapper {
+						flex: 0 0 35%;
+						width: 35%;
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							-o-object-fit: cover;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 830px) {
+		display: block;
+		.act_right {
+			margin: 0 auto;
+			width: calc(830px * 0.8);
+		}
+	}
+	@media (max-width: 684px) {
+		.act_right {
+			width: calc(100% * 0.8);
+			.act_article:nth-child(2) {
+				display: block;
+				.act_text {
+					flex: 0 0 100%;
+					width: 100%;
+				}
+				.img_wrapper {
+					flex: 0 0 100%;
+					width: 100%;
+					img {
+						height: unset;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 450px) {
+		.act_right {
+			.act_article:nth-child(2) {
+				.img_wrapper {
+					position: relative;
+					flex: 0 0 100%;
+					width: 100%;
+					width: calc(100% * 1.3);
+					left: 50%;
+					transform: translateX(-50%);
+
+					img {
+						height: unset;
+					}
+				}
+			}
+		}
+	}
 }
 
 section.vrdnik {
@@ -236,6 +322,49 @@ section.vrdnik {
 				.img_wrapper {
 					height: 791px;
 				}
+			}
+		}
+	}
+	@media (max-width: 830px) {
+		.vrdnik_wrapper {
+			display: block;
+			width: calc(830px * 0.8);
+			margin: 0 auto;
+			.img_wrapper {
+				width: 100%;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+				height: 400px;
+			}
+		}
+	}
+
+	@media (max-width: 670px) {
+		.vrdnik_wrapper {
+			width: calc(670px * 0.8);
+		}
+	}
+	@media (max-width: 670px) {
+		.vrdnik_wrapper {
+			width: calc(670px * 0.8);
+		}
+	}
+	@media (max-width: 550px) {
+		.vrdnik_wrapper {
+			width: calc(550px * 0.8);
+			.img_wrapper {
+				height: unset;
+			}
+		}
+	}
+	@media (max-width: 450px) {
+		.vrdnik_wrapper {
+			width: 100%;
+			padding: 0 30px;
+			.img_wrapper {
+				width: calc(100% + 60px);
+				height: unset;
 			}
 		}
 	}

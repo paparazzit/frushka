@@ -135,24 +135,7 @@ function paralax(items, ws) {
 	});
 }
 
-function apear_In(items, ws) {
-	window_width = def.offsetWidth;
-	window_heigh = def.offsetHeight;
 
-	items.forEach((item, index) => {
-		let item_pos = item.offsetTop;
-
-		if (item_pos - window_heigh * 0.6 < ws) {
-			// console.log(index, "IMAMO");
-			item.classList.remove("opacity_0");
-			item.classList.add("opacity_1");
-		} else {
-			item.classList.add("opacity_0");
-			item.classList.remove("opacity_1");
-			// console.log(index, "nemamo");
-		}
-	});
-}
 
 // window.onresize = () => {
 // 	resizeBodyHeight();
@@ -175,6 +158,26 @@ function apartmani_set() {
 			card_point.classList.remove("point_active");
 		});
 	}
+}
+
+
+function apear_In(items, ws) {
+	window_width = def.offsetWidth;
+	window_heigh = def.offsetHeight;
+
+	items.forEach((item, index) => {
+		let item_pos = item.offsetTop;
+
+		if (item_pos - window_heigh * 0.6 < ws) {
+			// console.log(index, "IMAMO");
+			item.classList.remove("opacity_0");
+			item.classList.add("opacity_1");
+		} else {
+			item.classList.add("opacity_0");
+			item.classList.remove("opacity_1");
+			// console.log(index, "nemamo");
+		}
+	});
 }
 
 // Functions
