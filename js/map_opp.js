@@ -90,7 +90,7 @@ function Map_points(map_container, list_cont, map_section) {
 		let img = lamela_card.querySelector(".img-wrapper img");
 		let text = lamela_card.querySelector(".card_text");
 		let card_text = info.text;
-		console.log(info);
+
 		setTimeout(() => {
 			lamela_card.classList.add("show_info");
 			naslov1.innerText = info.hdl;

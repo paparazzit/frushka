@@ -25,6 +25,7 @@ section.loc {
 			right: 10%;
 			background: rgba(255, 255, 255, 0.96);
 			transform: translate(50%, -50%);
+			-o-transform: translate(50%, -50%);
 			box-shadow: 2px 2px 5px rgba(59, 59, 59, 0.24);
 			h2 {
 				font-size: 3.2rem;
@@ -86,6 +87,7 @@ section.loc {
 			.left_card {
 				position: relative;
 				transform: translate(0, 0);
+				-o-transform: translate(0, 0);
 				top: 0;
 				right: 0;
 				width: 100%;
@@ -129,6 +131,7 @@ section.pano_loc {
 			top: 50%;
 			right: 0;
 			transform: translate(-20%, -50%);
+			-o-transform: translate(-20%, -50%);
 			height: 40%;
 			padding: 1rem 2rem;
 			background: white;
@@ -171,6 +174,7 @@ section.pano_loc {
 				top: 0;
 				left: 0;
 				transform: translate(0, 0);
+				-o-transform: translate(0, 0);
 				height: 100%;
 				width: 100%;
 				padding: 2rem;
@@ -193,6 +197,7 @@ section.pano_loc {
 				position: relative;
 				width: 100%;
 				transform: translate(0, 0);
+				-o-transform: translate(0, 0);
 				top: 0;
 				height: 100%;
 			}

@@ -73,6 +73,7 @@ section.apartmani_hero {
 				bottom: calc(100% + 50px);
 				left: -60px;
 				transform: scale(0);
+				-o-transform: scale(0);
 
 				h2 {
 					line-height: 1;
@@ -175,6 +176,9 @@ section.details {
 						height: 20px;
 						right: 5px;
 						transition: 0.4s all ease;
+						-o-transition: 0.4s all ease;
+						-moz-transition: 0.4s all ease;
+						-webkit-transition: 0.4s all ease;
 					}
 				}
 				.options {
@@ -191,6 +195,9 @@ section.details {
 					opacity: 0;
 					overflow: hidden;
 					transition: $transition-out;
+					-o-transition: $transition-out;
+					-moz-transition: $transition-out;
+					-webkit-transition: $transition-out;
 					z-index: -1;
 
 					.option {
@@ -217,6 +224,7 @@ section.details {
 					.selected {
 						&::after {
 							transform: rotate(90deg);
+							-o-transform: rotate(90deg);
 						}
 					}
 				}
@@ -232,6 +240,9 @@ section.details {
 			&#drop_row {
 				margin-top: -340px;
 				transition: 0.5s all ease-in-out;
+				-o-transition: 0.5s all ease-in-out;
+				-moz-transition: 0.5s all ease-in-out;
+				-webkit-transition: 0.5s all ease-in-out;
 				&.show_more {
 					margin-top: 30px;
 				}
@@ -308,13 +319,18 @@ section.details {
 				position: relative;
 				overflow: hidden;
 				transition: 0.5s all ease-in-out;
+				-o-transition: 0.5s all ease-in-out;
+				-moz-transition: 0.5s all ease-in-out;
+				-webkit-transition: 0.5s all ease-in-out;
 				transform: scaleY(0.5);
+				-o-transform: scaleY(0.5);
 				transform-origin: top center;
 				opacity: 0;
 				padding: 10px;
 				&.show_more {
 					opacity: 1;
 					transform: scaleY(1);
+					-o-transform: scaleY(1);
 				}
 				h2 {
 					margin-left: 20px;
@@ -347,18 +363,26 @@ section.details {
 				}
 				.lamela_table {
 					transition: 0.5s all ease-in-out;
+					-o-transition: 0.5s all ease-in-out;
+					-moz-transition: 0.5s all ease-in-out;
+					-webkit-transition: 0.5s all ease-in-out;
 					padding: 10px;
 					opacity: 0;
 					transform: scaleY(0.5);
+					-o-transform: scaleY(0.5);
 					transform-origin: top center;
 					&.show_more {
 						opacity: 1;
 						transform: scaleY(1);
+						-o-transform: scaleY(1);
 					}
 				}
 				.contact_form {
 					padding: 8px;
 					transition: 0.3s all ease-in-out;
+					-o-transition: 0.3s all ease-in-out;
+					-moz-transition: 0.3s all ease-in-out;
+					-webkit-transition: 0.3s all ease-in-out;
 					margin-top: 30px;
 					.contact_desc {
 						display: flex;
@@ -449,6 +473,7 @@ section.render_apart {
 				width: 290px;
 				top: 50%;
 				transform: translateY(-50%);
+				-o-transform: translateY(-50%);
 			}
 		}
 	}

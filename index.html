@@ -25,7 +25,7 @@
 						</div>
 						<div class="drop_down">
 							<a class="link active_nav" href="#">početna</a>
-							<a class="link" href="projekat.html">o projektu</a>
+							<!-- <a class="link" href="projekat.html">o projektu</a> -->
 							<a class="link" href="lokacija.html">lokacija</a>
 							<a class="link" href="resort.html">resort</a>
 							<a class="link" href="apartmani.html">apartmani</a>
@@ -108,10 +108,12 @@
 				</nav>
 				<header class="main-hero">
 					<div class="logo">
-						<svg
-							width="828"
-							height="153"
-							viewBox="0 0 828 153"
+						
+						 <svg
+						 class="main_logo"
+						 width="828"
+						 height="153"
+						 viewBox="0 0 828 153"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 						>
@@ -487,7 +489,11 @@
 									/>
 								</clipPath>
 							</defs>
-						</svg>
+						</svg> 
+						<img src="assets/main-logo-mob.svg" class="mob_logo" alt="">
+
+						
+							
 					</div>
 					<div class="hero-text">
 						<div class="circle">
@@ -503,7 +509,7 @@
 					</div>
 					<div class="hero-headline">
 						<hgroup class="hero-hg">
-							<h1 class="paralax_itm" data-direction="top" data-scroll="70">Oaza mira</h1>
+							<h1  data-direction="top" data-scroll="70">Oaza mira</h1>
 							<p>
 								Dobro došli u novu eru modernog načina stanovanja u srcu Fruške
 								gore. Fruške Residence je integrisani rezidencijalni kompleks koji
@@ -517,7 +523,7 @@
 						</hgroup>
 						<div class="headline-img " >
 							<img src="assets/hero_img-min.png" alt="" />
-							<div class="play-btn-big paralax paralax_itm" data-scroll="120" data-direction="top">
+							<div class="play-btn-big " onclick="show_video(event)" data-src = "https://www.youtube.com/embed/Njg7RhiDCp8">
 								<svg
 									width="133"
 									height="135"
@@ -561,7 +567,7 @@
 								predstavljaju idealnu lokaciju za svakodnevni život na planini.
 							</p>
 							<ol>
-								<li class="location"><span>1.</span> Premier resort apartmani</li>
+								<li class="location"><span>1.</span> Fruške Residence</li>
 								<li class="location"><span>2.</span> Istorijski spomenik Vrdnička kula</li>
 								<li class="location"><span>3.</span> Etno kompleks Vrdnička kula</li>
 								<li class="location"><span>4.</span> Resort Fruške terme</li>
@@ -689,7 +695,7 @@
 					</div>
 				</section>
 				<!-- #endregion -->
-				<section class="pano">
+				<section class="pano apear_scroll">
 					<iframe src="https://mag.archi/Ciklorama-Terme/" frameborder="0"></iframe>
 					<a href="https://mag.archi/Ciklorama-Terme/" target="blank" class="fullScreen">
 						<div class="top"></div>
@@ -700,12 +706,12 @@
 				
 				<section class="resort">
 					<article class="resort_inner">
-						<div class="img_wrapper ">
+						<div class="img_wrapper apear_scroll">
 							<img src="assets/resort_1.jpg" alt=""  />
 							<img src="assets/resort_text.png" alt="" class="res_text">
 						</div>
 						<div class="card-wrapper ">
-							<div class="card_style">
+							<div class="card_style apear_scroll">
 								<div class="circle">
 									<img src="assets/circle.png" alt="" />
 									<img src="assets/circle.png" alt="" />
@@ -744,16 +750,37 @@
 							</div>
 							<div class="item">
 								<img src="assets/slider/img_4.jpg" alt="" />
-								<img class="slider_num" src="assets/slider_nums/01.png" alt="">
+								<img class="slider_num" src="assets/slider_nums/04.png" alt="">
 							</div>
 							<div class="item">
 								<img src="assets/slider/img_5.jpg" alt="" />
-								<img class="slider_num" src="assets/slider_nums/02.png" alt="">
+								<img class="slider_num" src="assets/slider_nums/05.png" alt="">
 							</div>
 							<div class="item">
 								<img src="assets/slider/img_6.jpg" alt="" />
-								<img class="slider_num" src="assets/slider_nums/03.png" alt="">
+								<img class="slider_num" src="assets/slider_nums/06.png" alt="">
 							</div>
+							<div class="item">
+								<img src="assets/slider/img_7.jpg" alt="" />
+								<img class="slider_num" src="assets/slider_nums/07.png" alt="">
+							</div>
+							<div class="item">
+								<img src="assets/slider/img_8.jpg" alt="" />
+								<img class="slider_num" src="assets/slider_nums/08.png" alt="">
+							</div>
+							<div class="item">
+								<img src="assets/slider/img_9.jpg" alt="" />
+								<img class="slider_num" src="assets/slider_nums/09.png" alt="">
+							</div>
+							<div class="item">
+								<img src="assets/slider/img_10.jpg" alt="" />
+								<img class="slider_num" src="assets/slider_nums/10.png" alt="">
+							</div>
+							<div class="item">
+								<img src="assets/slider/img_11.jpg" alt="" />
+								<img class="slider_num" src="assets/slider_nums/11.png" alt="">
+							</div>
+							
 						</div>
 						<div class="controls">
 							<div class="ctrl_count">
@@ -779,13 +806,13 @@
 				</section>
 	
 				<section class="apartmani">
-					<article class="apartmani_wrapper">
+					<article class="apartmani_wrapper apear_scroll">
 						<div class="img-wrapper "  >
 				
 							<img src="assets/apartmani_1.jpg" alt=""   />
 						</div>
 						<div class="card-wrapper " >
-							<div class="card_style">
+							<div class="card_style ">
 								<h2 class="card_accent">Apartmani</h2>
 								<p>
 									Fruške Residence se sastoji od 140 apartmana, za ličnu upotrebu
@@ -798,7 +825,7 @@
 					</article>
 				</section>
 	
-				<section class="fruska_gora">
+				<section class="fruska_gora apear_scroll">
 					<article class="fruska_wrapper">
 						<img class="fruska_logo" src="assets/fruskaGora/logo.png" alt="">
 						<h3>Nacionalni park</h3>
@@ -819,7 +846,7 @@
 							</p>
 						</div><div class="video_controls">
 							
-							<div class="play_btn">
+							<div class="play_btn" onclick="show_video(event)" data-src ="https://www.youtube.com/embed/aTe9uu5J2VI">
 								<img src="assets/videoSection/play_arrow.png" alt="">
 								<img src="assets/videoSection/video.jpg" alt="" class="blured">
 							
@@ -827,49 +854,60 @@
 							<h3>Pogledaj</h3>
 						</div>
 					</hgroup>
+					<div class="video_wrapper" onclick="close_video()" >
+						<div class="close" onclick="close_video()"><span class="_1"></span> <span class="_2"></span></div>
+						<iframe width="950" height="534" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				</section>
 	
-				<section class="division_cards">
+				<section class="division_cards ">
 					<div class="promont_logo">
 						<img src="assets/division_cards/division_logo.png" alt="">
 						
 					</div>
-	
-					<div class="division_wrapper container">
-						<a href="" alt='' class="card">
-							<div class="card_img"><img src="assets/division_cards/card_1.jpg" alt=""></div>
-							<div class="overlay"></div>
-							<div class="letter_overly">
-								<img src="assets/division_cards/E.png" alt="">
+					
+						<div class="division_wrapper container">
+							<div class="card_wrapper">
+								<a href="#" alt='' class="card">
+									<div class="card_img"><img src="assets/division_cards/card_1.jpg" alt=""></div>
+									<div class="overlay"></div>
+									<div class="letter_overly">
+										<img src="assets/division_cards/E.png" alt="">
+									</div>
+									<h2>Energetika</h2>
+								</a>
+								<a href="#" class="card">
+									<div class="card_img"><img src="assets/division_cards/card_2.jpg" alt=""></div>
+									<div class="overlay"></div>
+									<div class="letter_overly">
+										<img src="assets/division_cards/h.png" alt="">
+									</div>
+									<h2>hotelijerstvo</h2>
+								</a>
 							</div>
-							<h2>Energetika</h2>
-						</a>
-						<div class="card">
-							<div class="card_img"><img src="assets/division_cards/card_2.jpg" alt=""></div>
-							<div class="overlay"></div>
-							<div class="letter_overly">
-								<img src="assets/division_cards/h.png" alt="">
+							<div class="card_wrapper">
+								<a href="#" class="card">
+									<div class="card_img"><img src="assets/division_cards/card_3.jpg" alt=""></div>
+									<div class="overlay"></div>
+									<div class="letter_overly">
+										<img src="assets/division_cards/G.png" alt="">
+									</div>
+									<h2>Destilerija</h2>
+								</a>
+								<a href="#" class="card">
+									<div class="card_img"><img src="assets/division_cards/card_4.jpg" alt=""></div>
+									<div class="overlay"></div>
+									<div class="letter_overly">
+										<img src="assets/division_cards/P.png" alt="">
+									</div>
+									<h2>Pivara</h2>
+								</a>
 							</div>
-							<h2>hotelijerstvo</h2>
-						</div>
-						<div class="card">
-							<div class="card_img"><img src="assets/division_cards/card_3.jpg" alt=""></div>
-							<div class="overlay"></div>
-							<div class="letter_overly">
-								<img src="assets/division_cards/G.png" alt="">
-							</div>
-							<h2>Destilerija</h2>
-						</div>
-						<div class="card">
-							<div class="card_img"><img src="assets/division_cards/card_4.jpg" alt=""></div>
-							<div class="overlay"></div>
-							<div class="letter_overly">
-								<img src="assets/division_cards/P.png" alt="">
-							</div>
-							<h2>Pivara</h2>
-						</div>
 						
-					</div>
+							
+						</div>
+					
+					
 				</section>
 
 				<!-- FOOTER -->
@@ -877,7 +915,7 @@
 					<div class="footer_top">
 						<div class="footer_wrapper">
 							<div class="footer_logo_1">
-								<img class="logo_1" src="assets/footer/Logo bottom.png" alt="">
+								<img class="logo_1" src="assets/footer/Logo bottom.svg" alt="">
 								<img class="logo_2" src="assets/mob_logo_black.svg" alt="">
 							</div>
 							<div class="footer_contact">
@@ -914,7 +952,7 @@
 							</div>
 							
 							<ul>
-								<li><a href="projekat.html">O projektu</a></li>
+								<!-- <li><a href="projekat.html">O projektu</a></li> -->
 								<li><a href="lokacija.html">Lokacija</a></li>
 								<li><a href="resort.html">Resort</a></li>
 								<li><a href="apartmani.html">Apartmani</a></li>

@@ -22,6 +22,7 @@ function Slider(slider) {
 	this.slideIndex = 0;
 	this.item_width = 0;
 	this.item_height = 0;
+	
 
 	// SET SIZE
 	this.setSize = function () {
@@ -33,6 +34,7 @@ function Slider(slider) {
 		} else {
 			this.slideDims = { perPage: 1, slideRadio: 2 };
 		}
+
 		return this.slideDims;
 	};
 	// START
@@ -88,20 +90,6 @@ function Slider(slider) {
 				this.prevSlide();
 			}
 		}
-
-		// console.log(e, message);
-		// if (touchPos > e.touches[0].pageX) {
-		// 	touchCount++;
-		// 	// this.nextSlide(this.resizeDims);
-		// 	console.log(touchPos, ": ", e.touches[0].pageX);
-		// 	// console.log("DESON");
-		// } else if (touchPos < e.touches[0].pageX) {
-		// 	// this.prevSlide();
-		// 	console.log(touchPos);
-		// 	touchCount++;
-		// }
-		// touchPos = e.touches[0].pageX;
-		// // console.log(touchCount);
 	};
 
 	// SET SLIDER WIDTH
@@ -126,7 +114,7 @@ function Slider(slider) {
 	};
 	this.nextSlide = function (perPage) {
 		this.slideIndex++;
-		let slide = (this.index + 1) / 2 + perPage.slideRadio;
+		let slide = this.index + 1 - perPage.perPage;
 
 		if (this.slideIndex > slide) {
 			this.slideIndex = 0;

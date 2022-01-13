@@ -111,7 +111,7 @@ function blur_img() {
 
 // PARALAX
 let paralax_items = document.querySelectorAll(".paralax_itm");
-let apear_items = document.querySelectorAll(".apear_scroll");
+
 function paralax(items, ws) {
 	window_width = def.offsetWidth;
 	window_heigh = def.offsetHeight;
@@ -135,8 +135,6 @@ function paralax(items, ws) {
 	});
 }
 
-
-
 // window.onresize = () => {
 // 	resizeBodyHeight();
 // };
@@ -159,8 +157,7 @@ function apartmani_set() {
 		});
 	}
 }
-
-
+let apear_items = document.querySelectorAll(".apear_scroll");
 function apear_In(items, ws) {
 	window_width = def.offsetWidth;
 	window_heigh = def.offsetHeight;
@@ -169,13 +166,11 @@ function apear_In(items, ws) {
 		let item_pos = item.offsetTop;
 
 		if (item_pos - window_heigh * 0.6 < ws) {
-			// console.log(index, "IMAMO");
 			item.classList.remove("opacity_0");
 			item.classList.add("opacity_1");
 		} else {
 			item.classList.add("opacity_0");
 			item.classList.remove("opacity_1");
-			// console.log(index, "nemamo");
 		}
 	});
 }
@@ -195,6 +190,8 @@ window.addEventListener("scroll", () => {
 // PROJECT
 let loader_art = document.querySelector(".loader");
 let loader_count = document.querySelector(".loader_cont");
+let main_header = document.querySelector(".main-hero");
+let page_header = document.querySelector("section.pageHeader");
 var load_page_images = [],
 	load_page_im = [],
 	load_page_panos = [],
@@ -236,8 +233,36 @@ function load_page_update() {
 		loader_art.classList.add("remove_load");
 		setTimeout(() => {
 			loader_art.classList.add("disable");
+			start_anim();
 		}, 300);
 	}
 
 	loader_count.innerHTML = ret + "%";
+}
+function start_anim() {
+	if (loader_art.classList.contains("disable")) {
+		if (main_header) {
+			main_header.classList.add("headerAnim");
+		}
+		if (page_header) {
+			page_header.classList.add("pageHeadAnim");
+		}
+	}
+}
+
+function show_video(event) {
+	let btn = event.target;
+
+	let video_wrapper = document.querySelector(".video_wrapper");
+	let iframe = document.querySelector(".video_wrapper iframe");
+	let src = btn.getAttribute("data-src");
+
+	video_wrapper.classList.add("active_video");
+	iframe.src = src;
+}
+function close_video() {
+	let video_wrapper = document.querySelector(".video_wrapper");
+	video_wrapper.classList.remove("active_video");
+	let iframe = document.querySelector(".video_wrapper iframe");
+	iframe.src = "";
 }

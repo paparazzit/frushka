@@ -44,6 +44,8 @@ section.contact_header {
 			display: flex;
 			align-items: stretch;
 			justify-content: center;
+			overflow: visible;
+
 			.contact_left {
 				margin-right: 50px;
 				display: flex;
@@ -170,7 +172,7 @@ section.contact_header {
 		.header_bottom {
 			margin-top: 80px;
 			.container {
-				border-top: 1px solid $table_br;
+				// border-top: 1px solid $table_br;
 				padding-top: 80px;
 			}
 		}
@@ -202,6 +204,7 @@ section.contact_header {
 	@media (max-width: 820px) {
 		.header_bottom {
 			.container {
+				border-top: 1px solid $table_br;
 				width: 80%;
 				margin: 0 auto;
 				.contact_left {
@@ -278,6 +281,9 @@ section.contact_header {
 								}
 								input:checked + label {
 									transition: 0.2s all ease;
+									-o-transition: 0.2s all ease;
+									-webkit-transition: 0.2s all ease;
+									-moz-transition: 0.2s all ease;
 									color: $accents_green;
 									font-weight: bold;
 								}
